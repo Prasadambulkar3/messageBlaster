@@ -88,7 +88,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         .state('app.contacts', {
             url: "/contacts",
             templateUrl: "../msgBlaster/views/contact/list/contactList.html",
-            data: { pageTitle: 'Contacts' },
+            data: { pageTitle: 'Contacts' },          
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
                     return $ocLazyLoad.load([
@@ -99,7 +99,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
                        },
                     ]);
                 }
-            }
+            }            
         })
 
         .state('app.importContacts', {
