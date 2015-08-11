@@ -1,7 +1,12 @@
 ﻿
 
+function ContactController() {
+    //alert("ContactController");
 
-function ContactController(CommonService) {
+}
+
+
+function ContactListController(CommonService) {
 
     var newColumns = [
                           { field: "Name", headerText: "Name", width: 75, textAlign: ej.TextAlign.Right },
