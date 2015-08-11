@@ -157,7 +157,15 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
          url: "/addContact",
          templateUrl: "../msgBlaster/views/contact/create/createContact.html",
          data: { pageTitle: 'Add Contact' },
-         controller : ""
+         //resolve: {
+         //    loadPlugin: function ($ocLazyLoad) {
+         //        return $ocLazyLoad.load([
+         //            {
+         //                files: ['css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css']
+         //            }
+         //        ]);
+         //    }
+         //}
      })
 
 }

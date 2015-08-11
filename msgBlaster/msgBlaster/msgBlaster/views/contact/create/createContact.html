@@ -1,36 +1,108 @@
 ﻿<div ng-controller="ContactController as contact">
     <div class="row wrapper border-bottom white-bg page-heading" style="padding-bottom: 0;">
         <div class="col-lg-10">
-            <h2 style="margin-top: 10px;">Contacts</h2>
+            <h2 style="margin-top: 10px;">New Contact</h2>
         </div>
     </div>
     <div class="row animated fadeIn">
         <div class="col-lg-12" style="padding-left: 0px; padding-right: 0px;">
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
-                    <div class="row m-b-sm m-t-sm">
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <input type="text" placeholder="Search" class="input-sm form-control">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-sm btn-primary">Go!</button>
-                                </span>
+                    <form class="form-horizontal">
+
+                        <div class="form-group ">
+                            <label class="col-lg-2 control-label">Name</label>
+                            <div class="col-lg-3">
+                                <input type="text" placeholder="First Name" class="form-control">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" placeholder="Last Name" class="form-control">
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <select chosen id="Select2" class="chosen-select" style="width: 162px;" tabindex="4" ng-model="group" ng-options="s for s in main.groups">
-                                </select>
+
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Mobile Number</label>
+                            <div class="col-lg-3">
+                                <input type="text" placeholder="" class="form-control">
                             </div>
                         </div>
-                        <div class="col-md-2 pull-right">
-                            <a ui-sref="app.addContact" class="col-lg-5 btn btn-primary btn-sm pull-right">Add</a>
+
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Gender</label>
+                            <div class="col-lg-3">
+                                <div class="radio radio radio-success radio-inline">
+                                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
+                                    <label for="inlineRadio1">Male</label>
+                                </div>
+                                <div class="radio radio radio-success radio-inline">
+                                    <input type="radio" id="inlineRadio2" value="option2" name="radioInline">
+                                    <label for="inlineRadio2">Female</label>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div id="Grid" ej-grid e-datasource="contact.data" e-columns="contact.columns" e-toolbarsettings='contact.tools' e-toolbarclick="contact.toolbarHandler" e-editsettings="contact.edittsetings" e-allowsorting="contact.allowsorting" e-sortsettings="contact.sortsettings" e-actionbegin="contact.actionBegin" e-allowpaging="contact.allowpaging" e-pagesettings="contact.pagesettings" e-editsettings="contact.editsettings" e-allowreordering="contact.allowReordering" e-allowresizing="contact.allowResizing"></div>
-                </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Birth Date</label>
+                            <div class="col-lg-3">
+                                <div class="input-group date">
+                                    <input type="datetime" class="form-control" calendar ng-model="contact.BirthDate" view="date" auto-close="true">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Anniversary</label>
+                            <div class="col-lg-3">
+                                <div class="input-group date">
+                                    <input type="datetime" class="form-control" calendar ng-model="contact.Anniversary" view="date" auto-close="true">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Email</label>
+                            <div class="col-lg-3">
+                                <input type="text" placeholder="" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-10" style="text-align: center;">
+                                <button class="btn btn-primary" type="submit">Save</button>
+                                <button class="btn btn-default" type="submit">Cancel</button>
+
+                            </div>
+                        </div>
+
+                        <div class="hr-line-dashed"></div>
+
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Select Groups </label>
+                        </div>
+                        <div class="form-group" style="text-align: right;">
+                            <label class="col-lg-1 control-label"></label>
+
+                            <div class="checkbox checkbox-success checkbox-inline col-lg-2">
+                                <input type="checkbox" id="Checkbox1" value="option1">
+                                <label for="inlineCheckbox1">Group1 </label>
+                            </div>
+                            <div class="checkbox checkbox-success checkbox-inline col-lg-2">
+                                <input type="checkbox" id="Checkbox2" value="option1">
+                                <label for="inlineCheckbox1"> Group2 </label>
+                            </div>
+                            <div class="checkbox checkbox-success checkbox-inline col-lg-2">
+                                <input type="checkbox" id="Checkbox3" value="option1">
+                                <label for="inlineCheckbox1"> Group3 </label>
+                            </div>
+                            <div class="checkbox checkbox-success checkbox-inline col-lg-2">
+                                <input type="checkbox" id="Checkbox4" value="option1">
+                                <label for="inlineCheckbox1">Group4 </label>
+                            </div>
+                        </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
-
