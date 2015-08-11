@@ -7482,7 +7482,19 @@ body.skin-3 {
 
 .clockpicker-popover{
       display: block;
- 
-  left:  -100px;
-  z-index: 10000;
+      left:  -100px;
+      /*top: 0px !important;*/
+      z-index: 10000;
+}
+
+/*@media (min-width: 1300px) and (max-width: 1400px){
+    .clockpicker-popover{
+          display: block;
+          left:  1120px !important;
+          z-index: 10000;
+    }
+}*/
+
+.sidebar-container-dropdown{
+    padding: 0px 10px;
 }
