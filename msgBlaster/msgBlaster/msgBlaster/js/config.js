@@ -1,3 +1,5 @@
+/// <reference path="../views/contact/create/createContact.html" />
+
 /**
  * INSPINIA - Responsive Admin Theme
  *
@@ -28,7 +30,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
 
         .state('app.dashboard', {
             url: "/dashboard",
-            templateUrl: "views/dashboard.html",
+            templateUrl: "../msgBlaster/views/common/dashboard.html",
             data: { pageTitle: 'Dashboard' },
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
@@ -55,58 +57,37 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
 
         .state('app.users', {
             url: "/users",
-            templateUrl: "views/users.html",
+            templateUrl: "../msgBlaster/views/user/list/userList.html",
             data: { pageTitle: 'Users' }
-        })
-
-         .state('app.login', {
-             url: "/login",
-             templateUrl: "views/login.html",
-             data: { pageTitle: 'Login' },
-             resolve: {
-                 loadPlugin: function ($ocLazyLoad) {
-                     return $ocLazyLoad.load([
-                         {
-                             files: ['css/plugins/iCheck/custom.css', 'js/plugins/iCheck/icheck.min.js']
-                         }
-                     ]);
-                 }
-             }
-         })
-
-        .state('forgot_password', {
-            url: "/forgot_password",
-            templateUrl: "views/forgot_password.html",
-            data: { pageTitle: 'Forgot password', specialClass: 'gray-bg' }
         })
 
         .state('app.profile', {
             url: "/profile",
-            templateUrl: "views/profile.html",
+            templateUrl: "../msgBlaster/views/client/profile.html",
             data: { pageTitle: 'Profile' }
         })
 
         .state('app.groups', {
             url: "/groups",
-            templateUrl: "views/groups.html",
+            templateUrl: "../msgBlaster/views/group/list/groupList.html",
             data: { pageTitle: 'Projects' }
         })
 
         .state('app.templates', {
             url: "/templates",
-            templateUrl: "views/templates.html",
+            templateUrl: "../msgBlaster/views/template/list/templateList.html",
             data: { pageTitle: 'Templates' }
         })
 
         .state('app.locations', {
             url: "/locations",
-            templateUrl: "views/locations.html",
+            templateUrl: "../msgBlaster/views/location/list/locationList.html",
             data: { pageTitle: 'Locations' }
         })
 
         .state('app.contacts', {
             url: "/contacts",
-            templateUrl: "views/contacts.html",
+            templateUrl: "../msgBlaster/views/contact/list/contactList.html",
             data: { pageTitle: 'Contacts' },
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
@@ -123,7 +104,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
 
         .state('app.importContacts', {
             url: "/importContacts",
-            templateUrl: "views/importContacts.html",
+            templateUrl: "../msgBlaster/views/importContact/importContact.html",
             data: { pageTitle: 'Import Contacts' },
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
@@ -138,7 +119,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
 
         .state('app.campaigns', {
             url: "/campaigns",
-            templateUrl: "views/campaigns.html",
+            templateUrl: "../msgBlaster/views/contact/list/contactList.html",
             data: { pageTitle: 'Campaigns' },
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
@@ -153,7 +134,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
 
       .state('app.coupons', {
           url: "/coupons",
-          templateUrl: "views/coupons.html",
+          templateUrl: "../msgBlaster/views/coupon/list/couponList.html",
           data: { pageTitle: 'Coupons' },
           resolve: {
               loadPlugin: function ($ocLazyLoad) {
@@ -168,8 +149,15 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
 
      .state('app.creditRequests', {
          url: "/creditRequests",
-         templateUrl: "views/creditRequests.html",
+         templateUrl: "../msgBlaster/views/creditRequest/list/creditRequestList.html",
          data: { pageTitle: 'Credit Requests' },
+     })
+
+     .state('app.createContact', {
+         url: "/addContact",
+         templateUrl: "../msgBlaster/views/contact/create/createContact.html",
+         data: { pageTitle: 'Add Contact' },
+         controller : ""
      })
 
 }

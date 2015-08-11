@@ -1,0 +1,43 @@
+<div class="inmodal">
+    <div class="modal-header">
+        <h4 class="modal-title">Profile Information</h4>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-3 control-label font-noraml">Code</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-model="profile.ProfileData.EmployeeID" ng-disabled="true">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label font-noraml">Name</label>
+
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-model="profile.ProfileData.EmployeeName">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label font-noraml">Contact Number</label>
+
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-model="profile.ProfileData.ContactNo">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label font-noraml">Email ID</label>
+
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-model="profile.ProfileData.EmailID">
+                </div>
+            </div>
+        </form>
+        <div class="modal-footer" style="text-align:center;">
+            <button type="button" class="btn btn-primary" ng-click="profile.save(profile.ProfileData)">Save changes</button>
+            <button type="button" class="btn btn-white" ng-click="profile.cancel()">Close</button>
+        </div>
+    </div>
+</div>

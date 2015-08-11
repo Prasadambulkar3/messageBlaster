@@ -1,10 +1,11 @@
+/// <reference path="../views/common/sendMessage.html" />
 
 
 
 $(document).ready(function () {
 
     // Append config box / Only for demo purpose
-    $.get("views/sendMessage.html", function (data) {
+    $.get("../msgBlaster/views/common/sendMessage.html", function (data) {
         //alert(data)
         $('body').append(data);
 
