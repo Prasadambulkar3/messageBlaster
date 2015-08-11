@@ -1,0 +1,5 @@
+C:\Users\Gomtesh\Desktop\Demotheme\Demotheme\Demotheme\bin\Demotheme.dll
+C:\Users\Gomtesh\Desktop\Demotheme\Demotheme\Demotheme\bin\Demotheme.pdb
+C:\Users\Gomtesh\Desktop\Demotheme\Demotheme\Demotheme\obj\Debug\msgBlaster.csprojResolveAssemblyReference.cache
+C:\Users\Gomtesh\Desktop\Demotheme\Demotheme\Demotheme\obj\Debug\Demotheme.dll
+C:\Users\Gomtesh\Desktop\Demotheme\Demotheme\Demotheme\obj\Debug\Demotheme.pdb

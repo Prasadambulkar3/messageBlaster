@@ -1,0 +1,15 @@
+D:\IBMS\Demo theme project\Demotheme\Demotheme\bin\Demotheme.dll
+D:\IBMS\Demo theme project\Demotheme\Demotheme\bin\Demotheme.pdb
+D:\IBMS\Demo theme project\Demotheme\Demotheme\obj\Debug\Demotheme.dll
+D:\IBMS\Demo theme project\Demotheme\Demotheme\obj\Debug\Demotheme.pdb
+D:\IBMS\Demo theme project\Demotheme\Demotheme\obj\Debug\Demotheme.csprojResolveAssemblyReference.cache
+D:\IBMS\Demo\Demotheme\Demotheme\Demotheme\bin\Demotheme.dll
+D:\IBMS\Demo\Demotheme\Demotheme\Demotheme\bin\Demotheme.pdb
+D:\IBMS\Demo\Demotheme\Demotheme\Demotheme\obj\Debug\Demotheme.csprojResolveAssemblyReference.cache
+D:\IBMS\Demo\Demotheme\Demotheme\Demotheme\obj\Debug\Demotheme.dll
+D:\IBMS\Demo\Demotheme\Demotheme\Demotheme\obj\Debug\Demotheme.pdb
+C:\Users\Gomtesh\Desktop\Demotheme\Demotheme\Demotheme\bin\Demotheme.dll
+C:\Users\Gomtesh\Desktop\Demotheme\Demotheme\Demotheme\bin\Demotheme.pdb
+C:\Users\Gomtesh\Desktop\Demotheme\Demotheme\Demotheme\obj\Debug\Demotheme.dll
+C:\Users\Gomtesh\Desktop\Demotheme\Demotheme\Demotheme\obj\Debug\Demotheme.pdb
+C:\Users\Gomtesh\Desktop\Demotheme\Demotheme\Demotheme\obj\Debug\Demotheme.csprojResolveAssemblyReference.cache
