@@ -1,0 +1,86 @@
+﻿<div ng-controller="SendMessageController as sendMessage" class="theme-config">
+    <div class="theme-config-box">
+        <div class="spin-icon">
+            <i class="fa fa-cogs fa-spin"></i>
+        </div>
+        <div class="skin-setttings">
+            <div class="title">Send Message</div>
+            <div class="setings-item">
+                <textarea placeholder="Recipient" class="form-control" />
+            </div>
+
+            <div class="setings-item">
+                <textarea placeholder="Message" class="form-control" />
+            </div>
+
+            <div class="setings-item">
+                <select chosen id="Select2" class="chosen-select" style="width: 162px;" tabindex="4" ng-model="group" ng-options="s for s in main.groups">
+                </select>
+            </div>
+
+            <div class="setings-item">
+                <label class="font-noraml col-lg-3">Send:</label>
+                <div class="radio  radio-inline">
+                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
+                    <label for="inlineRadio1" class="font-noraml" style="line-height: 1.2;">Now</label>
+                </div>
+                <div class="radio  radio-inline">
+                    <input type="radio" id="inlineRadio2" value="option2" name="radioInline">
+                    <label for="inlineRadio2" class="font-noraml" style="line-height: 1.2;">Later</label>
+                </div>
+            </div>
+
+
+            <div class="setings-item" style="padding-top: 0px;">
+                <div class="setings-item col-lg-6">
+                    <input type="text" class="form-control datepicker" calender ng-model="date">
+                </div>
+
+                <div class="setings-item col-lg-6">
+                    <div class="input-group clockpicker" data-autoclose="true">
+                        <input type="text" class="form-control" value="09:30">
+                        <span class="input-group-addon">
+                            <span class="fa fa-clock-o"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="setings-item" style="text-align: center;">
+                <button type="button" class="btn btn-primary btn-m" ng-click="main.send()">Send</button>
+                <button type="button" class="btn btn-default btn-m" ng-click="sendMessage.send()">Cancel</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    $('.clockpicker').clockpicker();
+
+
+    $('.datepicker').datepicker({
+        todayBtn: "linked",
+        keyboardNavigation: false,
+        forceParse: false,
+        format: "dd-M-yy",
+        calendarWeeks: true,
+        autoclose: true
+    });
+
+    // Config box
+    <!-- IMPORTANT -->
+    // Angular directive handel this so there is no need to include this to project
+    <!-- IMPORTANT -->
+
+ 
+
+    // SKIN Select
+    $('.spin-icon').click(function () {
+        $(".theme-config-box").toggleClass("show");
+    });   
+
+</script>
