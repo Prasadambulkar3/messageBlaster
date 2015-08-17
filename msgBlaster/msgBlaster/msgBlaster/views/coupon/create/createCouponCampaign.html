@@ -1,0 +1,135 @@
+﻿<div ng-controller="CouponCampaignController as couponCampaign">
+<div class="row wrapper border-bottom white-bg page-heading" style="padding-bottom: 0;">
+    <div class="col-lg-7 col-md-5">
+        <h2 style="margin-top: 10px;">New Coupon Campaign</h2>
+    </div>
+    <div class="col-lg-4 col-md-6 no-padding">
+       <p class="col-lg-12 no-padding pull-right" style="margin-top: 18px;">
+            <label class="">Required Credits <span class="badge badge-info" style="font-size: 11px;">10</span></label>  
+            <label class="">&nbsp;&nbsp;Remaining Characters <span class="badge badge-info" style="font-size: 11px;">160</span></label>
+        </p>
+    </div>
+</div>
+<div class="row animated fadeIn">
+    <div class="col-lg-12" style="padding-left: 0px; padding-right: 0px;">
+        <div class="ibox float-e-margins">
+            <div class="ibox-content">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-lg-3 col-md-3 col-sm-3 control-label">Name</label>
+                        <div class="col-lg-6 col-md-7 col-sm-7">
+                            <input type="text" placeholder="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 col-md-3 col-sm-3 control-label">Group</label>
+                        <div class="col-lg-6 col-md-7 col-sm-7">
+                            <select class="form-control no-padding">
+                                <option>Select Group</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 col-md-3 col-sm-3 control-label">Recipients Number</label>
+                        <div class="col-lg-6 col-md-7 col-sm-7">
+                            <textarea class="form-control" rows="3" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 col-md-3 col-sm-3 control-label">Template</label>
+                        <div class="col-lg-6 col-md-7 col-sm-7">
+                            <select class="form-control no-padding">
+                                <option>Select Template</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 col-md-3 col-sm-3 control-label">Message</label>
+                        <div class="col-lg-6 col-md-7 col-sm-7">
+                            <textarea class="form-control" rows="3" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 col-md-3 col-sm-3 control-label">Min. Purchase Amount</label>
+                        <div class="col-lg-2 col-md-2 col-sm-2 txt-with-drpdwn">
+                            <input type="text" placeholder="" class="form-control">
+                        </div>
+                    </div>
+
+                     <div class="form-group">
+                        <label class="col-lg-3 col-md-3 col-sm-3 control-label">Expires After</label>
+                        <div class="col-lg-2 col-md-2 col-sm-2 txt-with-drpdwn">
+                           <div class="input-group">
+                                <input type="text" class="form-control" style="padding: 2px;" /> 
+                                <div class="input-group-addon no-padding">
+                                    <select style="border-color: #fff;">
+                                        <option value="day" ng-selected="true">Days</option>
+                                        <option value="" hidden />
+                                        <option value="week">Weeks</option>
+                                        <option value="month">Months</option>
+                                    </select>                       
+                                </div>
+                            </div>
+                        </div>
+                        <label class="col-lg-1 col-md-2 col-sm-2 control-label txt-with-drpdwn-no-padding">Expiry Date</label>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="input-group date">
+                                <input type="datetime" class="form-control" calendar ng-model="couponCampaign.ExpiryDate" view="date" auto-close="true">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 col-md-3 col-sm-3 control-label">Send</label>
+                        <div class="col-lg-6 col-md-7 col-sm-7">
+                            <div class="radio radio-success radio-inline">
+                                <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
+                                <label for="inlineRadio1" class="font-noraml" style="line-height: 1.2;">Now</label>
+                            </div>
+                            <div class="radio radio-success radio-inline">
+                                <input type="radio" id="inlineRadio2" value="option2" name="radioInline">
+                                <label for="inlineRadio2" class="font-noraml" style="line-height: 1.2;">Later</label>
+                            </div>
+                         </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-3 col-md-3 col-sm-3 control-label">Scheduled Date</label>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="input-group date">
+                                <input type="datetime" class="form-control" calendar ng-model="couponCampaign.ScheduledDate" view="date" auto-close="true">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            </div>
+                         </div>
+                         <label class="col-lg-1 col-md-1 col-sm-1 control-label">Time</label>
+                         <div class="col-lg-2 col-md-3 col-sm-3">
+                             <div class="input-group clockpicker" data-placement="top" data-align="left" data-autoclose="true">
+                                <input type="text" class="form-control" value="09:30">
+                                <span class="input-group-addon">
+                                    <span class="fa fa-clock-o"></span>
+                                </span>
+                             </div>
+                         </div>
+                    </div>
+
+                     <div class="form-group">
+                        <div class="col-sm-4 col-md-5 col-lg-5 col-sm-offset-3">
+                            <a href="login.html" class="btn btn-white" type="submit">Cancel</a>
+                            <button class="btn btn-primary" type="submit">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.clockpicker').clockpicker();
+</script>

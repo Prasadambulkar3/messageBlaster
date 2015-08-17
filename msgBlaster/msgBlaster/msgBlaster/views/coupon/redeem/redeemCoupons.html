@@ -1,0 +1,100 @@
+﻿<div ng-controller="CouponRedeemptionController as coupon">
+<div class="row wrapper border-bottom white-bg page-heading" style="padding-bottom: 0;">
+    <div class="col-lg-10">
+        <h2 style="margin-top: 10px;">Redeem Coupons</h2>
+    </div>
+</div>
+<div class="row animated fadeIn">
+    <div class="col-lg-12 m-t-md">
+       <div class="ibox float-e-margins">
+        <div class="tabs-container">
+
+            <tabset>
+                <tab heading="Redeem">
+                    <div class="panel-body">
+                      <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-4 col-md-4 col-sm-4 control-label">Mobile Number</label>
+                            <div class="col-lg-5 col-md-5 col-sm-5">
+                                <input type="text" placeholder="" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-4 col-md-4 col-sm-4 control-label">Code</label>
+                            <div class="col-lg-5 col-md-5 col-sm-5">
+                                <input type="text" placeholder="" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-5 col-md-5 col-sm-5 col-lg-offset-6 col-md-offset-6 col-sm-offset-6">
+                                 <button class="btn btn-primary btn-sm" type="submit">Check</button>
+                            </div>
+                        </div>
+                      </form>
+                      <div class="hr-line-dashed"></div>
+                      <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 col-md-3 col-xs-3 col-sm-3 control-label">Mobile</label>
+                            <label class="col-lg-2 col-md-3 col-xs-3 col-sm-3 line-height-2">9422078809</label>
+                            <label class="col-lg-3 col-md-3 col-xs-3 col-sm-3 control-label">Code</label>
+                            <label class="col-lg-2 col-md-3 col-xs-3 col-sm-3 line-height-2">123456</label>  
+                            
+                            <label class="col-lg-3 col-md-3 col-xs-3 col-sm-3 control-label">Campaign</label>
+                            <label class="col-lg-2 col-md-3 col-xs-3 col-sm-3 line-height-2">Test Campaign</label>
+                            <label class="col-lg-3 col-md-3 col-xs-3 col-sm-3 control-label">Expiry Date</label>
+                            <label class="col-lg-2 col-md-3 col-xs-3 col-sm-3 line-height-2">25-Aug-2015</label>  
+                            
+                            <label class="col-lg-3 col-md-3 col-xs-3 col-sm-3 control-label">Min. Purchase Amount</label>
+                            <label class="col-lg-2 col-md-3 col-xs-3 col-sm-3 line-height-2">2000</label>
+                            <label class="col-lg-3 col-md-3 col-xs-3 col-sm-3 control-label">Purchase Amount</label>
+                            <div class="col-lg-2 col-md-3 col-xs-3 col-sm-3 line-height-2"><input type="text" placeholder="" class="form-control"></div>
+                        </div>
+
+                        <div class="form-group">  
+                            <label class="col-lg-3 col-md-3 col-xs-3 col-sm-3 control-label">Bill no.</label>
+                            <div class="col-lg-2 col-md-3 col-xs-3 col-sm-3 line-height-2"><input type="text" placeholder="" class="form-control"></div>
+                            <label class="col-lg-3 col-md-3 col-xs-3 col-sm-3 control-label">Bill Date</label>
+                            <div class="col-lg-2 col-md-3 col-xs-3 col-sm-3 line-height-2"><div class="input-group date">
+                                <input type="datetime" class="form-control" calendar ng-model="coupon.BillDate" view="date" auto-close="true">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            </div></div>                                 
+                        </div>
+
+                        <div class="form-group">  
+                            <label class="col-lg-3 col-md-3 col-xs-3 col-sm-3 control-label">Remark</label>
+                            <div class="col-lg-7 col-md-9 col-xs-9 col-sm-9 line-height-2"><textarea class="form-control" rows="3" /></div>                               
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-5 col-md-5 col-sm-5 col-lg-offset-5 col-md-offset-5 col-sm-offset-5">
+                                 <button class="btn btn-primary btn-sm" type="submit">Redeem</button>
+                                 <button class="btn btn-white btn-sm" type="submit">Cancel</button>
+                            </div>
+                        </div>
+                      </form>
+                    </div>
+                </tab>
+                <tab heading="Resend">
+                    <div class="panel-body">
+                       <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-4 col-md-4 col-sm-4 control-label">Mobile Number</label>
+                            <div class="col-lg-5 col-md-5 col-sm-5">
+                                <input type="text" placeholder="" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-5 col-md-5 col-sm-5 col-lg-offset-6 col-md-offset-6 col-sm-offset-6">
+                                 <button class="btn btn-primary btn-sm" type="submit">Check</button>
+                            </div>
+                        </div>
+                      </form>
+                    </div>
+                </tab>
+            </tabset>
+
+        </div>
+       </div>
+    </div>
+</div>
+</div>

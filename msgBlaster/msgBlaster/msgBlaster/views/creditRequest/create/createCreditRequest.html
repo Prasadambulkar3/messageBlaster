@@ -1,0 +1,154 @@
+﻿<div ng-controller="CreditRequestController as creditRequest">
+<div class="row wrapper border-bottom white-bg page-heading" style="padding-bottom: 0;">
+    <div class="col-lg-10 col-md-10">
+        <h2 style="margin-top: 10px;">New Credit Request</h2>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="ibox">
+                <div class="ibox-content product-box">
+                    <div class="product-imitation faq-question credit-request-plans" style="color:#676A70">
+                       <div> Credits</div>
+                       <div> 1000</div>
+                    </div>
+                    <div class="product-desc">
+                                <span class="product-price">
+                                   <i class="fa fa-inr"></i>459
+                                </span>
+                        <a href="#" class="product-name">Price : 0.45</a>
+                        <a href="#" class="product-name">Tax   : 2%</a>
+                        <div class="m-t text-righ">
+
+                            <a href="#" class="btn btn-xs btn-outline btn-primary">Select <i class="fa fa-long-arrow-right"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="ibox">
+                <div class="ibox-content product-box">
+                    <div class="product-imitation faq-question credit-request-plans" style="color:#676A70">
+                        <div>Credits</div>
+                        <div>10000</div>
+                    </div>
+                    <div class="product-desc">
+                       <span class="product-price"><i class="fa fa-inr"></i>3570</span>
+                        <a href="#" class="product-name">Price : 0.35</a>
+                        <a href="#" class="product-name">Tax   : 2%</a>
+                        <div class="m-t text-righ">
+                            <a href="#" class="btn btn-xs btn-outline btn-primary">Select <i class="fa fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="ibox">
+                <div class="ibox-content product-box">
+                    <div class="product-imitation faq-question credit-request-plans" style="color:#676A70">
+                        <div>Credits</div>
+                        <div>30000</div>
+                    </div>
+                    <div class="product-desc">
+                        <span class="product-price"><i class="fa fa-inr"></i>7650</span>
+                        <a href="#" class="product-name">Price : 0.25</a>
+                        <a href="#" class="product-name">Tax   : 2%</a>
+                        <div class="m-t text-righ">
+                            <a href="#" class="btn btn-xs btn-outline btn-primary">Select <i class="fa fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="ibox">
+                <div class="ibox-content product-box">
+                    <div class="product-imitation faq-question credit-request-plans" style="color:#676A70">
+                        <div>Credits</div>
+                        <div>100000</div>
+                    </div>
+                    <div class="product-desc">
+                        <span class="product-price"><i class="fa fa-inr"></i>15300</span>
+                        <a href="#" class="product-name">Price : 0.15</a>
+                        <a href="#" class="product-name">Tax   : 2%</a>
+                        <div class="m-t text-righ">
+                            <a href="#" class="btn btn-xs btn-outline btn-primary">Select <i class="fa fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+    <div class="row">
+         <div class="ibox float-e-margins">
+            <div class="ibox-content">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-lg-4 col-md-4 col-sm-4 control-label">Enter Credits</label>
+                        <div class="col-lg-3 col-md-4 col-sm-4">
+                            <input type="text" placeholder="" class="form-control">
+                        </div>                       
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 col-md-4 col-sm-4 control-label">Amount</label>
+                        <div class="col-lg-3 col-md-4 col-sm-4">
+                            <input type="text" placeholder="" class="form-control" disabled>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <button class="btn btn-primary btn-sm" type="submit">Pay Now</button>
+                        </div>
+                    </div>
+                 </form>
+                 <div class="hr-line-dashed"></div>
+                 <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-lg-4 col-md-4 col-sm-4 control-label">Payment Mode</label>
+                        <div class="col-lg-6 col-md-7 col-sm-7">
+                             <div class="radio radio-success radio-inline">
+                                <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
+                                <label for="inlineRadio1" class="font-noraml" style="line-height: 1.2;">Cheque</label>
+                             </div>
+                             <div class="radio radio-success radio-inline">
+                                <input type="radio" id="inlineRadio2" value="option2" name="radioInline">
+                                <label for="inlineRadio2" class="font-noraml" style="line-height: 1.2;">Bank Transfer</label>
+                             </div> 
+                         </div>                      
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 col-md-4 col-sm-4 control-label">Bank Name</label>
+                        <div class="col-lg-3 col-md-4 col-sm-4">
+                            <input type="text" placeholder="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 col-md-4 col-sm-4 control-label">Cheque No.</label>
+                        <div class="col-lg-3 col-md-4 col-sm-4">
+                            <input type="text" placeholder="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 col-md-4 col-sm-4 control-label">Cheque Date</label>
+                        <div class="col-lg-3 col-md-4 col-sm-4">
+                            <div class="input-group date">
+                                <input type="datetime" class="form-control" calendar ng-model="creditRequest.ChequeDate" view="date" auto-close="true">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <button class="btn btn-primary btn-sm" type="submit">Pay Offline</button>
+                        </div>
+                    </div>
+                 </form>
+            </div>
+         </div>
+    </div>
+</div>
