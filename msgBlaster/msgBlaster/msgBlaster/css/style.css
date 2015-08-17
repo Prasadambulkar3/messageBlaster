@@ -40,7 +40,7 @@ h5 {
 .nav > li > a {
     color: #a7b1c2;
     font-weight: 600;
-    padding: 10px 20px 10px 25px;
+    padding: 5px 20px 5px 25px;
 }
 .nav.navbar-right > li > a {
     color: #999c9e;
@@ -7487,14 +7487,43 @@ body.skin-3 {
       z-index: 10000;
 }
 
-/*@media (min-width: 1300px) and (max-width: 1400px){
-    .clockpicker-popover{
-          display: block;
-          left:  1120px !important;
-          z-index: 10000;
-    }
-}*/
 
 .sidebar-container-dropdown{
     padding: 0px 10px;
+}
+
+ .tabs-dashboard div > ul > li > a{
+ padding: 6px !important;
+ }
+
+ @media (min-width: 765px) and (max-width: 1030px){
+     .txt-with-drpdwn{
+         padding-right: 0;
+     }
+ }
+
+  @media (min-width: 771px){
+     .txt-with-drpdwn-no-padding{
+         padding: 0;
+     }
+ }
+
+@media (max-width: 783px){
+    .first-name-txtbox{
+            margin-bottom: 8px;
+    }
+}
+
+.credit-request-plans{
+    padding: 70px 0;
+}
+
+.line-height-2{
+    line-height: 2;
+}
+
+@media (min-width: 991px) and (max-width: 1242px){
+    .profile-txtbox{
+        margin-left: 16.66666667%;
+    }
 }

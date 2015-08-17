@@ -1,6 +1,11 @@
 ﻿
 
 function CampaignController() {
+    //alert("ContactController");
+
+}
+
+function CampaignListController() {
 
     var newColumns = [
                          { field: "Name", headerText: "Name", textAlign: ej.TextAlign.Right },
@@ -13,7 +18,7 @@ function CampaignController() {
 
     this.columns = newColumns;
 
-    this.data = ej.DataManager({ url: "http://localhost:63138/api/Campaign/GetCampaignListByClientId?clientid=1", adaptor: "WebApiAdaptor", offline: true });
+   // this.data = ej.DataManager({ url: "http://localhost:63138/api/Campaign/GetCampaignListByClientId?clientid=1", adaptor: "WebApiAdaptor", offline: true });
 
     this.query = new ej.Query().addParams('selecedYear', '2014').addParams('accessId', '1');
 

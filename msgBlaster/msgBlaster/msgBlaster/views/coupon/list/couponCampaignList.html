@@ -1,7 +1,7 @@
-﻿<div ng-controller="CouponController as coupons">
+﻿<div ng-controller="CouponCampaignListController as coupons">
     <div class="row wrapper border-bottom white-bg page-heading" style="padding-bottom: 0;">
         <div class="col-lg-10">
-            <h2 style="margin-top: 10px;">Coupons</h2>
+            <h2 style="margin-top: 10px;">Coupon Campaigns</h2>
         </div>
     </div>
     <div class="row animated fadeIn">
@@ -19,10 +19,10 @@
                         </div>
 
                         <div class="col-md-2 pull-right">
-                            <a href="" class="col-lg-5 btn btn-primary btn-sm pull-right">Add</a>
+                            <a  ui-sref="app.createCouponCampaign" class="col-lg-5 btn btn-primary btn-sm pull-right">Add</a>
                         </div>
                     </div>
-                    <div id="Grid" ej-grid e-datasource="coupons.data" e-query="coupons.query" e-columns="coupons.columns" e-allowsorting="coupons.allowsorting" e-sortsettings="coupons.sortsettings" e-allowpaging="coupons.allowpaging" e-pagesettings="coupons.pagesettings"></div>
+                   <!-- <div id="Grid" ej-grid e-datasource="coupons.data" e-query="coupons.query" e-columns="coupons.columns" e-allowsorting="coupons.allowsorting" e-sortsettings="coupons.sortsettings" e-allowpaging="coupons.allowpaging" e-pagesettings="coupons.pagesettings"></div>-->
                 </div>
             </div>
         </div>

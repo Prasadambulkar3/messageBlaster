@@ -119,7 +119,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
 
         .state('app.campaigns', {
             url: "/campaigns",
-            templateUrl: "../msgBlaster/views/contact/list/contactList.html",
+            templateUrl: "../msgBlaster/views/campaign/list/campaignList.html",
             data: { pageTitle: 'Campaigns' },
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
@@ -134,8 +134,8 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
 
       .state('app.coupons', {
           url: "/coupons",
-          templateUrl: "../msgBlaster/views/coupon/list/couponList.html",
-          data: { pageTitle: 'Coupons' },
+          templateUrl: "../msgBlaster/views/coupon/list/couponCampaignList.html",
+          data: { pageTitle: 'Coupon Campaigns' },
           resolve: {
               loadPlugin: function ($ocLazyLoad) {
                   return $ocLazyLoad.load([
@@ -157,15 +157,51 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
          url: "/addContact",
          templateUrl: "../msgBlaster/views/contact/create/createContact.html",
          data: { pageTitle: 'Add Contact' },
-         //resolve: {
-         //    loadPlugin: function ($ocLazyLoad) {
-         //        return $ocLazyLoad.load([
-         //            {
-         //                files: ['css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css']
-         //            }
-         //        ]);
-         //    }
-         //}
+     })
+
+    .state('app.createCampaign', {
+        url: "/addCampaign",
+        templateUrl: "../msgBlaster/views/campaign/create/createCampaign.html",
+        data: { pageTitle: 'Add Campaign' },
+    })
+
+    .state('app.createCouponCampaign', {
+        url: "/addCouponCampaign",
+        templateUrl: "../msgBlaster/views/coupon/create/createCouponCampaign.html",
+        data: { pageTitle: 'Add Campaign' },
+    })
+
+    .state('app.createUser', {
+        url: "/addUser",
+        templateUrl: "../msgBlaster/views/user/create/createUser.html",
+        data: { pageTitle: 'Add User' },
+    })
+
+     .state('app.createCreditRequest', {
+         url: "/addCreditRequest",
+         templateUrl: "../msgBlaster/views/creditRequest/create/createCreditRequest.html",
+         data: { pageTitle: 'Add Credit Request' },
+     })
+
+     .state('app.redeemCoupons', {
+         url: "/redeemCoupons",
+        templateUrl: "../msgBlaster/views/coupon/redeem/redeemCoupons.html",
+        data: { pageTitle: 'Coupon Redeemption' },
+     })
+
+     .state('app.settings', {
+         url: "/settings",
+         templateUrl: "../msgBlaster/views/settings/settings.html",
+         data: { pageTitle: 'Setings' },
+         resolve: {
+             loadPlugin: function ($ocLazyLoad) {
+                 return $ocLazyLoad.load([
+                     {
+                         files: ['css/plugins/dropzone/basic.css', 'css/plugins/dropzone/dropzone.css', 'js/plugins/dropzone/dropzone.js']
+                     }
+                 ]);
+             }
+         }
      })
 
 }

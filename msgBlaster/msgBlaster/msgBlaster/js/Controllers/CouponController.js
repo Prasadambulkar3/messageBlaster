@@ -1,5 +1,9 @@
 ﻿
-function CouponController() {
+function CouponCampaignController() {
+
+}
+
+function CouponCampaignListController() {
 
     var newColumns = [
                          { field: "CouponCampaignName", headerText: "Name", textAlign: ej.TextAlign.Right },
@@ -13,7 +17,7 @@ function CouponController() {
 
     this.columns = newColumns;
 
-    this.data = ej.DataManager({ url: "http://localhost:63138/api/Coupon/GetCouponListByClientId?clientid=1", adaptor: "WebApiAdaptor", offline: true });
+    //this.data = ej.DataManager({ url: "http://localhost:63138/api/Coupon/GetCouponListByClientId?clientid=1", adaptor: "WebApiAdaptor", offline: true });
 
     this.query = new ej.Query().addParams('selecedYear', '2014').addParams('accessId', '1');
 
@@ -24,4 +28,8 @@ function CouponController() {
     this.allowsorting = { allowSorting: true };
 
     this.sortsettings = { sortedColumns: [{ field: "Id", direction: ej.sortOrder.Ascending }] }
+}
+
+function CouponRedeemptionController() {
+
 }

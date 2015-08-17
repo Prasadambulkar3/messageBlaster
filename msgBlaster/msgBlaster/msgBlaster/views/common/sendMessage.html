@@ -37,7 +37,7 @@
             </div>
 
             <div class="setings-item">
-                <label class="font-noraml col-lg-3">Send:</label>
+                <label class="font-noraml col-lg-3 i-checks">Send:</label>
                 <div class="radio radio-success radio-inline">
                     <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
                     <label for="inlineRadio1" class="font-noraml" style="line-height: 1.2;">Now</label>
@@ -49,12 +49,12 @@
             </div>
 
             <div class="setings-item" style="padding-top: 0px;">
-                <div class="setings-item col-lg-6">
-                    <input type="text" class="form-control datepicker datepicker-orient-left" calender ng-model="date">
+                <div class="col-lg-5 col-md-5" style="padding: 10px 0px;">
+                    <input type="text" class="form-control datepicker datepicker-orient-left" placeholder="date" calender ng-model="date">
                 </div>
 
-                <div class="setings-item col-lg-6">
-                    <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
+                <div class="col-lg-5 col-md-5 pull-right" style="padding: 10px 0px;">
+                    <div class="input-group clockpicker" data-placement="top" data-align="right" data-autoclose="true">
                         <input type="text" class="form-control" value="09:30">
                         <span class="input-group-addon">
                             <span class="fa fa-clock-o"></span>
@@ -85,7 +85,7 @@
         format: "dd-M-yy",
         calendarWeeks: true,
         autoclose: true,
-        orientation: "left"
+        orientation: "auto right"
     });
 
     // Config box

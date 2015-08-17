@@ -1,43 +1,88 @@
-<div class="inmodal">
-    <div class="modal-header">
-        <h4 class="modal-title">Profile Information</h4>
+<div ng-controller="UserController as user">
+    <div class="row wrapper border-bottom white-bg page-heading" style="padding-bottom: 0;">
+        <div class="col-lg-10">
+            <h2 style="margin-top: 10px;">Profile</h2>
+        </div>
     </div>
-    <div class="modal-body">
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label class="col-sm-3 control-label font-noraml">Code</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" ng-model="profile.ProfileData.EmployeeID" ng-disabled="true">
+
+    <div class="row animated fadeIn">
+        <div class="col-lg-12" style="padding-left: 0px; padding-right: 0px;">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal">
+                        <div class="col-lg-2 col-md-2">
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                   <label for="fileInput">
+                                        <img alt="image" class="img-circle m-t-xs img-responsive" src="img/a1.jpg">
+                                        <a>Edit photo</a>
+                                   </label>
+                                    <div class="m-t-sm"><input type="file" name="fileInput" id="fileInput" style="display:none"></div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-lg-10 col-md-10">
+                            <div class="form-group">
+                            <label class="col-sm-2 col-md-2 col-lg-2 control-label">Name</label>
+                            <div class="col-sm-5 col-md-4 col-lg-3 first-name-txtbox">
+                                <input type="text" placeholder="First Name" class="form-control"></div>
+                            <div class="col-sm-5 col-md-4 col-lg-3">
+                            <input type="text" placeholder="Last Name" class="form-control"></div>
+                             </div>
+                         </div>
+
+                         <div class="col-lg-10 col-md-10">
+                               <div class="form-group">
+                            <label class="col-sm-2 col-md-2 col-lg-2 control-label">Mobile</label>
+                            <div class="col-sm-10 col-md-8 col-lg-6">
+                                <input type="text" class="form-control">
+                            </div></div>
+                         </div>
+
+                        <div class="col-lg-10 col-md-10">
+                              <div class="form-group">
+                            <label class="col-sm-2 col-md-2 col-lg-2 control-label">Email</label>
+                            <div class="col-sm-10 col-md-8 col-lg-6">
+                                <input type="email" class="form-control" disabled>
+                            </div></div>
+                        </div>
+
+                        <div class="col-lg-10 col-md-10 profile-txtbox">
+                            <div class="form-group">
+                                <label class="col-sm-2 col-md-2 col-lg-2 control-label">Password</label>
+                                <div class="col-sm-6 col-md-5 col-lg-4">
+                                    <input type="password" class="form-control" disabled>
+                                </div>
+                                <div class="col-sm-4 col-md-3 col-lg-2">
+                                    <a style="line-height:2">change password</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-10 col-md-10 col-lg-offset-2 col-md-offset-2">
+                              <div class="form-group">
+                            <label class="col-sm-2 col-md-2 col-lg-2 control-label">Location</label>
+                            <div class="col-sm-6 col-md-5 col-lg-4">
+                                <select class="form-control">
+                                    <option>Select Location</option>
+                                    <option>option 2</option>
+                                    <option>option 3</option>
+                                    <option>option 4</option>
+                                </select>
+                            </div></div>
+                        </div>
+
+                        <div class="form-group col-lg-10 col-md-10 col-md-offset-4">
+                            <div class="form-group ">
+                                <div class="col-sm-4 col-md-5 col-lg-5 col-sm-offset-6">
+                                    <button class="btn btn-primary" type="submit">Save</button>
+                                    <a href="login.html" class="btn btn-white" type="submit">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-
-            <div class="form-group">
-                <label class="col-sm-3 control-label font-noraml">Name</label>
-
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" ng-model="profile.ProfileData.EmployeeName">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-3 control-label font-noraml">Contact Number</label>
-
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" ng-model="profile.ProfileData.ContactNo">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-3 control-label font-noraml">Email ID</label>
-
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" ng-model="profile.ProfileData.EmailID">
-                </div>
-            </div>
-        </form>
-        <div class="modal-footer" style="text-align:center;">
-            <button type="button" class="btn btn-primary" ng-click="profile.save(profile.ProfileData)">Save changes</button>
-            <button type="button" class="btn btn-white" ng-click="profile.cancel()">Close</button>
         </div>
     </div>
 </div>
