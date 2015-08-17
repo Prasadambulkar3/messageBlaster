@@ -18,9 +18,10 @@ angular.module('msgBlaster')
     .controller('LocationController', LocationController)
     .controller('TemplateListController', TemplateListController)
     .controller('TemplateController', TemplateController)
+    .controller('UserController', UserController)
+   
 
-
-
+   
 
 
 
