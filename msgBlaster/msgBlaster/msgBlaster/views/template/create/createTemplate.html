@@ -1,0 +1,28 @@
+<div class="inmodal">
+    <div class="modal-header">
+        <h4 class="modal-title">New Template</h4>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-3 control-label font-noraml">Title</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" ng-model="template.Title">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label font-noraml">Message</label>
+
+                <div class="col-sm-9">
+                    <textarea class="form-control" ng-model="template.Message"/>
+                </div>
+            </div>
+            <div class="modal-footer" style="text-align: center;">
+                <button type="button" class="btn btn-primary" ng-click="template.save()">Save</button>
+                <button type="button" class="btn btn-white" ng-click="template.cancel()">Cancel</button>
+            </div>
+        </form>
+
+    </div>
+</div>

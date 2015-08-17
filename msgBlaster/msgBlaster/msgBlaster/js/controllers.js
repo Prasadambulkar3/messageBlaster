@@ -15,9 +15,12 @@ angular.module('msgBlaster')
     .controller('CouponRedeemptionController', CouponRedeemptionController)
     .controller('CreditRequestController', CreditRequestController)
     .controller('GroupController', GroupController)
-   
+    .controller('LocationController', LocationController)
+    .controller('TemplateListController', TemplateListController)
+    .controller('TemplateController', TemplateController)
 
-   
+
+
 
 
 
