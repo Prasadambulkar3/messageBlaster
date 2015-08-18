@@ -4,6 +4,7 @@ function CouponCampaignController() {
 }
 
 function CouponCampaignListController() {
+    
 
     var newColumns = [
                          { field: "CouponCampaignName", headerText: "Name", textAlign: ej.TextAlign.Right },
