@@ -74,9 +74,12 @@
 
 <script>
 
+    // SKIN Select
+    $('.spin-icon').click(function () {
+        $('.theme-config-box').toggleClass('show');
+    });    
 
     $('.clockpicker').clockpicker();
-
 
     $('.datepicker').datepicker({
         todayBtn: "linked",
@@ -89,15 +92,7 @@
     });
 
     // Config box
-    <!-- IMPORTANT -->
     // Angular directive handel this so there is no need to include this to project
-    <!-- IMPORTANT -->
-
- 
-
-    // SKIN Select
-    $('.spin-icon').click(function () {
-        $(".theme-config-box").toggleClass("show");
-    });   
+  
 
 </script>
