@@ -7532,3 +7532,12 @@ body.skin-3 {
 .margin-auto{
     margin: 0 auto;
 }
+
+.no-resize{
+    resize: none;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}

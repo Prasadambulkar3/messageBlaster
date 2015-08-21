@@ -261,7 +261,7 @@ function dropZone() {
             maxFilesize: 100,
             paramName: "uploadfile",
             maxThumbnailFilesize: 5,
-            init: function() {
+            init: function () {
                 scope.files.push({file: 'added'});
                 this.on('success', function(file, json) {
                 });

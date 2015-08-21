@@ -1,7 +1,5 @@
 ﻿
-
 function ContactController() {
-    //alert("ContactController");
 
 }
 
@@ -27,12 +25,6 @@ function ContactListController(CommonService) {
 
     this.pagesettings = { pageSize: 11 };
 
-    //this.allowgrouping = { allowGrouping: true };
-    //this.groupsettings = { showToggleButton: true, showUngroupButton: true, showGroupedColumn: false };
-
-    //$scope.groupsettings = { groupedColumns: ["Type"], showToggleButton: true, showUngroupButton: true, showGroupedColumn: false};
-
-
     this.edittsetings = { allowEditing: true, editMode: ej.Grid.EditMode.Normal };
 
     //For adjust width of column
@@ -41,13 +33,9 @@ function ContactListController(CommonService) {
     //For reorder using drag and drop
     this.allowReordering = { allowReordering: true };
 
-
     this.allowsorting = { allowSorting: true };
 
     this.sortsettings = { sortedColumns: [{ field: "Id", direction: ej.sortOrder.Ascending }] }
-
-    //grouping at grid load time and grouping tools
-
 
     this.actionBegin = function (args) {
         if (args.requestType == "beginedit") {
