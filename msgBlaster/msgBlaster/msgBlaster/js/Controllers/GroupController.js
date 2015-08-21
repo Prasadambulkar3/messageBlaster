@@ -83,7 +83,7 @@ function GroupController(GroupService, $route, $location, $http) {
     //    console.log("error");
     //});
 
-    this.data = ej.DataManager({ url: "http://localhost:63138/api/Group/GetGroupListByClientId", adaptor: "WebApiAdaptor" }), 
+    this.data = ej.DataManager({ url: "http://192.168.1.52/msgblasterApi/api/Group/GetGroupListByClientId", adaptor: "WebApiAdaptor" }),
 
     this.query = new ej.Query().addParams('clientId', '1').addParams('accessId', '1');
 

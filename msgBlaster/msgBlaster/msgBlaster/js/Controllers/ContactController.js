@@ -21,7 +21,7 @@ function ContactListController(CommonService) {
 
     this.tools = { showToolbar: false, toolbarItems: [ej.Grid.ToolBarItems.Add, ej.Grid.ToolBarItems.Edit, ej.Grid.ToolBarItems.Delete, ej.Grid.ToolBarItems.ExcelExport, ej.Grid.ToolBarItems.WordExport, ej.Grid.ToolBarItems.PdfExport, ej.Grid.ToolBarItems.PrintGrid] };
 
-    this.data = ej.DataManager({ url: "http://localhost:63138/api/Contact/GetContactsbyClientId?clientId=1", adaptor: "WebApiAdaptor", offline: true });
+    this.data = ej.DataManager({ url: "http://192.168.1.52/msgblasterApi/api/Contact/GetContactsbyClientId?clientId=1", adaptor: "WebApiAdaptor", offline: true });
     
     this.allowpaging = { allowPaging: true };
 

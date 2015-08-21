@@ -18,7 +18,7 @@ function CouponCampaignListController() {
 
     this.columns = newColumns;
 
-    this.data = ej.DataManager({ url: "http://localhost:63138/api/Coupon/GetCouponListByClientId?clientid=1", adaptor: "WebApiAdaptor", offline: true });
+    this.data = ej.DataManager({ url: "http://192.168.1.52/msgblasterApi/api/Coupon/GetCouponListByClientId?clientid=1", adaptor: "WebApiAdaptor", offline: true });
 
     this.query = new ej.Query().addParams('selecedYear', '2014').addParams('accessId', '1');
 

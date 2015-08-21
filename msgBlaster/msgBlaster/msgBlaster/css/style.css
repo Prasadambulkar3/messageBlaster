@@ -7528,3 +7528,7 @@ body.skin-3 {
         margin-left: 16.66666667%;
     }
 }
+
+.margin-auto{
+    margin: 0 auto;
+}
