@@ -1,6 +1,5 @@
 ﻿
-function profileController($modalInstance, CommonService) {
-
+App.controller('profileController', function ($modalInstance, CommonService) {
     var d = CommonService.profileData()
 
     d.then(function (data) {
@@ -18,4 +17,4 @@ function profileController($modalInstance, CommonService) {
     this.cancel = function () {
         $modalInstance.dismiss('cancel');
     }
-}
+});

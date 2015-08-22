@@ -1,5 +1,7 @@
 ﻿
-function ApplicationSettingService() {
+var App = angular.module('App.services', []);
+
+App.service('ApplicationSettingService', function () {
 
     this.WebApiUrl = "http://localhost:63138/";
 
@@ -16,6 +18,7 @@ function ApplicationSettingService() {
     this.CouponCampaignMessage = "Your CouponCode is: [Code]"
 
     this.RecordsPerPage = 10;
+
     this.PaginationLength = 5;
 
     this.datePlaceHolderText = "dd-mm-yyyy";
@@ -27,9 +30,9 @@ function ApplicationSettingService() {
     this.columnSize;
 
     this.VerificationCodeSentLimit = 3;
-}
+});
 
-function DataAccessService($http, $q, $window, ApplicationSettingService) {
+App.service('DataAccessService', function ($http, $q, $window, ApplicationSettingService) {
 
     var domain = ApplicationSettingService.WebApiUrl;
 
@@ -44,7 +47,7 @@ function DataAccessService($http, $q, $window, ApplicationSettingService) {
         $http({
             method: 'GET',
             url: url,
-            data:Id
+            data: Id
         }).
         success(function (data, status, headers, config) {
             deferred.resolve(data);
@@ -57,7 +60,7 @@ function DataAccessService($http, $q, $window, ApplicationSettingService) {
 
     //------------- Get Single Object 
     this.getDataWithParams = function (url, params) {
-        
+
         if (ApplicationSettingService.APIMode) {
             url = domain + url;
         }
@@ -72,7 +75,7 @@ function DataAccessService($http, $q, $window, ApplicationSettingService) {
             deferred.resolve(data);
         }).
         error(function (data, status, headers, config) {
-                    
+
 
             deferred.reject(status);
         });
@@ -80,7 +83,7 @@ function DataAccessService($http, $q, $window, ApplicationSettingService) {
     };
 
     //------------- Get Data with Object & Params
-    this.getDataWithObjectAndParams = function (url,object, params) {
+    this.getDataWithObjectAndParams = function (url, object, params) {
 
         if (ApplicationSettingService.APIMode) {
             url = domain + url;
@@ -103,7 +106,7 @@ function DataAccessService($http, $q, $window, ApplicationSettingService) {
     };
 
     //------------- Get Object List
-    this.getDataList = function (url) {       
+    this.getDataList = function (url) {
 
         if (ApplicationSettingService.APIMode) {
             url = domain + url;
@@ -129,7 +132,7 @@ function DataAccessService($http, $q, $window, ApplicationSettingService) {
         if (ApplicationSettingService.APIMode) {
             url = domain + url;
         }
-     
+
         var deferred = $q.defer();
         $http({
             method: 'POST',
@@ -145,21 +148,21 @@ function DataAccessService($http, $q, $window, ApplicationSettingService) {
         error(function (data, status, headers, config) {
             deferred.reject(status);
         });
-      
+
         return deferred.promise;
 
     };
 
     //--------------- Post Data to WEB API with Param and Object
-    this.postDataWithObjectAndParams = function (url, object,params) {
-       
+    this.postDataWithObjectAndParams = function (url, object, params) {
+
 
         if (ApplicationSettingService.APIMode) {
-           
+
             url = domain + url;
-           
+
         }
-     
+
         var deferred = $q.defer();
         $http({
             method: 'POST',
@@ -182,7 +185,7 @@ function DataAccessService($http, $q, $window, ApplicationSettingService) {
 
     //--------------- Post Data to WEB API With Param
     this.postDataWithParams = function (url, params) {
-        
+
         if (ApplicationSettingService.APIMode) {
             url = domain + url;
         }
@@ -191,7 +194,7 @@ function DataAccessService($http, $q, $window, ApplicationSettingService) {
         $http({
             method: 'POST',
             url: url,
-            params:params 
+            params: params
         }).
         success(function (data, status, headers, config) {
             console.log("Data access s");
@@ -205,9 +208,9 @@ function DataAccessService($http, $q, $window, ApplicationSettingService) {
         return deferred.promise;
 
     };
-    
+
     //---------- Send Request to WEB API for Delete Record
-    this.deleteData = function (url, Id,AccessId) {
+    this.deleteData = function (url, Id, AccessId) {
 
         if (ApplicationSettingService.APIMode) {
             url = domain + url;
@@ -245,7 +248,7 @@ function DataAccessService($http, $q, $window, ApplicationSettingService) {
             deferred.reject(status);
         });
         return deferred.promise;
-        
+
     }
-      
-}
+
+});

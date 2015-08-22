@@ -1,10 +1,10 @@
 ﻿
-function CouponCampaignController() {
+App.controller('CouponCampaignController', function () {
 
-}
+});
 
-function CouponCampaignListController() {
-    
+App.controller('CouponCampaignListController', function () {
+
 
     var newColumns = [
                          { field: "CouponCampaignName", headerText: "Name", textAlign: ej.TextAlign.Right },
@@ -13,7 +13,7 @@ function CouponCampaignListController() {
                          { field: "ExpiresOn", headerText: "Expiry Date ", textAlign: ej.TextAlign.Right },
                          { headerText: "Log ", textAlign: ej.TextAlign.Center, template: "<a href=&#8217;#’>view log</a>" },
                          { headerText: "Change Expiry Date", textAlign: ej.TextAlign.Center, template: "<a href=&#8217;#’>modify</a>" }
-                    ];
+    ];
 
 
     this.columns = newColumns;
@@ -29,8 +29,9 @@ function CouponCampaignListController() {
     this.allowsorting = { allowSorting: true };
 
     this.sortsettings = { sortedColumns: [{ field: "Id", direction: ej.sortOrder.Ascending }] }
-}
+});
 
-function CouponRedeemptionController() {
+App.controller('CouponRedeemptionController', function () {
 
-}
+
+});

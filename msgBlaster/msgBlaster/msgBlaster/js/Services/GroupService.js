@@ -1,12 +1,10 @@
-﻿
-function GroupService(DataAccessService, $resource) {
+﻿App.service('GroupService', function (DataAccessService, $resource) {
 
     this.getList = function (clientId) {
         $resource('http://localhost:63138/api/Group/GetGroupListByClientId:' + 'clientId', {}, {
             'update': { method: 'PUT' }
         })
     }
-
 
     this.getGroupList = function (ClientId) {
         var paramObject = { "AccessId": "1", "ClientId": ClientId }
@@ -25,10 +23,10 @@ function GroupService(DataAccessService, $resource) {
         var promise1 = DataAccessService.postDataWithObjectAndParams('api/Group/EditGroup', object, paramObject);
         return promise1;
     };
-    
+
     this.deleteGroup = function (Id) {
         var paramObject = { "Id": Id };
         var data = DataAccessService.postDataWithParams('api/Group/RemoveGroup', paramObject);
         return (data);
     }
-}
+});

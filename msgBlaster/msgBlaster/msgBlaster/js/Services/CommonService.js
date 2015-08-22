@@ -1,9 +1,9 @@
 ﻿
 
-function CommonService() {
+App.service('CommonService', function () {
 
-    
-}
+
+});
 
 
 

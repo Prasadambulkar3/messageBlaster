@@ -1,6 +1,5 @@
 ﻿
-
-function LocationController() {
+App.controller('LocationController', function () {
 
     //alert("ContactController");
     this.addingLocation = true;
@@ -28,4 +27,4 @@ function LocationController() {
         //});
         this.addingLocation = true;
     }
-}
+});

@@ -1,5 +1,5 @@
 ﻿
-function dashboardController() {
+App.controller('DashboardController', function () {
 
     var data1 = [
         [gd(2012, 1, 1), 7],
@@ -167,4 +167,4 @@ function dashboardController() {
      */
     this.flotData = dataset;
     this.flotOptions = options;
-}
+});
