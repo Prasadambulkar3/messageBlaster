@@ -1,7 +1,5 @@
-﻿/// <reference path="../../views/template/create/createTemplate.html" />
-
-
-function TemplateListController($modal) {
+﻿
+App.controller('TemplateListController', function ($modal) {
 
     this.modal = function () {
         $modal.open({
@@ -11,9 +9,10 @@ function TemplateListController($modal) {
             //windowClass: "animated flipInY"
         });
     };
-}
+});
 
-function TemplateController($modal, $modalInstance) {
+
+App.controller('TemplateController', function ($modal, $modalInstance) {
 
     this.save = function () {
         //CommonService.updateProfileData(data);
@@ -24,4 +23,4 @@ function TemplateController($modal, $modalInstance) {
         $modalInstance.dismiss('cancel');
     }
 
-}
+});

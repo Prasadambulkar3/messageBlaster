@@ -1,11 +1,13 @@
 ﻿
-function MainController() {
+var App = angular.module('App.controllers', []);
+
+App.controller('MainController', function () {
 
     this.send = function () {
         alert("send");
     }
 
-    this.links = [         
+    this.links = [
                   { state: "app.dashboard", icon: "fa fa-th-large", linkName: "Dashboard" },
                   { state: "app.groups", icon: "fa fa-group", linkName: "Groups" },
                   { state: "app.contacts", icon: "fa fa-book", linkName: "Contacts" },
@@ -22,11 +24,11 @@ function MainController() {
 
     this.groups = [
       'Family',
-      'Friends',      
+      'Friends',
       'My Group',
       'Test Group',
       'Group1',
-      'My Group2'      
+      'My Group2'
     ];
 
-}
+});

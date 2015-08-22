@@ -1,6 +1,5 @@
 ﻿
-
-function GroupController(GroupService, $route, $location, $http) {
+App.controller('GroupController', function () {
 
     this.addingGroup = true;
 
@@ -10,7 +9,6 @@ function GroupController(GroupService, $route, $location, $http) {
         data.Name = groupName;
         data.ClientId = 1;
         var grp = GroupService.createGroup(data);
-
 
         grp.then(function (data1) {
             if (data1 != 0) {
@@ -79,4 +77,4 @@ function GroupController(GroupService, $route, $location, $http) {
 
         alert("end")
     }
-}
+});

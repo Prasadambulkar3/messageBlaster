@@ -2,7 +2,10 @@
 /**
  * pageTitle - Directive for set Page title - mata title
  */
-function pageTitle($rootScope, $timeout) {
+
+var App = angular.module('App.directives', []);
+
+App.directive('pageTitle', function ($rootScope, $timeout) {
     return {
         link: function(scope, element) {
             var listener = function(event, toState, toParams, fromState, fromParams) {
@@ -17,12 +20,13 @@ function pageTitle($rootScope, $timeout) {
             $rootScope.$on('$stateChangeStart', listener);
         }
     }
-};
+});
 
 /**
  * sideNavigation - Directive for run metsiMenu on sidebar navigation
  */
-function sideNavigation($timeout) {
+
+App.directive('sideNavigation', function ($timeout) {
     return {
         restrict: 'A',
         link: function(scope, element) {
@@ -33,15 +37,15 @@ function sideNavigation($timeout) {
             });
         }
     };
-};
+});
 
 /**
  * responsibleVideo - Directive for responsive video
  */
-function responsiveVideo() {
+App.directive('responsiveVideo', function () {
     return {
         restrict: 'A',
-        link:  function(scope, element) {
+        link: function (scope, element) {
             var figure = element;
             var video = element.children();
             video
@@ -50,7 +54,7 @@ function responsiveVideo() {
                 .removeAttr('width')
 
             //We can use $watch on $window.innerWidth also.
-            $(window).resize(function() {
+            $(window).resize(function () {
                 var newWidth = figure.width();
                 video
                     .width(newWidth)
@@ -58,12 +62,12 @@ function responsiveVideo() {
             }).resize();
         }
     }
-}
+});
 
 /**
  * iboxTools - Directive for iBox tools elements in right corner of ibox
  */
-function iboxTools($timeout) {
+App.directive('iboxTools', function ($timeout) {
     return {
         restrict: 'A',
         scope: true,
@@ -90,12 +94,12 @@ function iboxTools($timeout) {
                 }
         }
     };
-};
+});
 
 /**
  * minimalizaSidebar - Directive for minimalize sidebar
 */
-function minimalizaSidebar($timeout) {
+App.directive('minimalizaSidebar', function ($timeout) {
     return {
         restrict: 'A',
         template: '<a class="navbar-minimalize minimalize-styl-2 btn btn-primary "  style="margin-left: -25px;margin-top: 13px;border-radius: 0px 20px 20px 0px;background-color: #263949;border-color: #263949;" href="" ng-click="minimalize()"><i class="fa fa-bars"></i></a>',
@@ -123,10 +127,9 @@ function minimalizaSidebar($timeout) {
             }
         }
     };
-};
+});
 
-
-function closeOffCanvas() {
+App.directive('closeOffCanvas', function () {
     return {
         restrict: 'A',
         template: '<a class="close-canvas-menu" ng-click="closeOffCanvas()"><i class="fa fa-times"></i></a>',
@@ -136,12 +139,12 @@ function closeOffCanvas() {
             }
         }
     };
-}
+});
 
 /**
  * vectorMap - Directive for Vector map plugin
  */
-function vectorMap() {
+App.directive('vectorMap', function () {
     return {
         restrict: 'A',
         scope: {
@@ -172,13 +175,13 @@ function vectorMap() {
             });
         }
     }
-}
+});
 
 
 /**
  * sparkline - Directive for Sparkline chart
  */
-function sparkline() {
+App.directive('sparkline', function () {
     return {
         restrict: 'A',
         scope: {
@@ -197,21 +200,21 @@ function sparkline() {
             };
         }
     }
-};
+});
 
 /**
  * icheck - Directive for custom checkbox icheck
  */
-function icheck($timeout) {
+App.directive('icheck', function ($timeout) {
     return {
         restrict: 'A',
         require: 'ngModel',
-        link: function($scope, element, $attrs, ngModel) {
-            return $timeout(function() {
+        link: function ($scope, element, $attrs, ngModel) {
+            return $timeout(function () {
                 var value;
                 value = $attrs['value'];
 
-                $scope.$watch($attrs['ngModel'], function(newValue){
+                $scope.$watch($attrs['ngModel'], function (newValue) {
                     $(element).iCheck('update');
                 })
 
@@ -219,27 +222,27 @@ function icheck($timeout) {
                     checkboxClass: 'icheckbox_square-green',
                     radioClass: 'iradio_square-green'
 
-                }).on('ifChanged', function(event) {
-                        if ($(element).attr('type') === 'checkbox' && $attrs['ngModel']) {
-                            $scope.$apply(function() {
-                                return ngModel.$setViewValue(event.target.checked);
-                            });
-                        }
-                        if ($(element).attr('type') === 'radio' && $attrs['ngModel']) {
-                            return $scope.$apply(function() {
-                                return ngModel.$setViewValue(value);
-                            });
-                        }
-                    });
+                }).on('ifChanged', function (event) {
+                    if ($(element).attr('type') === 'checkbox' && $attrs['ngModel']) {
+                        $scope.$apply(function () {
+                            return ngModel.$setViewValue(event.target.checked);
+                        });
+                    }
+                    if ($(element).attr('type') === 'radio' && $attrs['ngModel']) {
+                        return $scope.$apply(function () {
+                            return ngModel.$setViewValue(value);
+                        });
+                    }
+                });
             });
         }
     };
-}
+});
 
 /**
  * ionRangeSlider - Directive for Ion Range Slider
  */
-function ionRangeSlider() {
+App.directive('ionRangeSlider', function () {
     return {
         restrict: 'A',
         scope: {
@@ -249,44 +252,44 @@ function ionRangeSlider() {
             elem.ionRangeSlider(scope.rangeOptions);
         }
     }
-}
+});
 
 /**
  * dropZone - Directive for Drag and drop zone file upload plugin
  */
-function dropZone() {
-    return function(scope, element, attrs) {
+App.directive('dropZone', function () {
+    return function (scope, element, attrs) {
         element.dropzone({
             url: "/upload",
             maxFilesize: 100,
             paramName: "uploadfile",
             maxThumbnailFilesize: 5,
             init: function () {
-                scope.files.push({file: 'added'});
-                this.on('success', function(file, json) {
+                scope.files.push({ file: 'added' });
+                this.on('success', function (file, json) {
                 });
-                this.on('addedfile', function(file) {
-                    scope.$apply(function(){
+                this.on('addedfile', function (file) {
+                    scope.$apply(function () {
                         alert(file);
-                        scope.files.push({file: 'added'});
+                        scope.files.push({ file: 'added' });
                     });
                 });
-                this.on('drop', function(file) {
+                this.on('drop', function (file) {
                     alert('file');
                 });
             }
         });
     }
-}
+});
 
 /**
  * chatSlimScroll - Directive for slim scroll for small chat
  */
-function chatSlimScroll($timeout) {
+App.directive('chatSlimScroll', function ($timeout) {
     return {
         restrict: 'A',
-        link: function(scope, element) {
-            $timeout(function(){
+        link: function (scope, element) {
+            $timeout(function () {
                 element.slimscroll({
                     height: '234px',
                     railOpacity: 0.4
@@ -295,23 +298,23 @@ function chatSlimScroll($timeout) {
             });
         }
     };
-}
+});
 
 /**
  * customValid - Directive for custom validation example
  */
-function customValid(){
+App.directive('customValid', function () {
     return {
         require: 'ngModel',
-        link: function(scope, ele, attrs, c) {
-            scope.$watch(attrs.ngModel, function() {
+        link: function (scope, ele, attrs, c) {
+            scope.$watch(attrs.ngModel, function () {
 
                 // You can call a $http method here
                 // Or create custom validation
 
                 var validText = "Inspinia";
 
-                if(scope.extras == validText) {
+                if (scope.extras == validText) {
                     c.$setValidity('cvalid', true);
                 } else {
                     c.$setValidity('cvalid', false);
@@ -320,17 +323,17 @@ function customValid(){
             });
         }
     }
-}
+});
 
 
 /**
  * fullScroll - Directive for slimScroll with 100%
  */
-function fullScroll($timeout){
+App.directive('fullScroll', function ($timeout) {
     return {
         restrict: 'A',
-        link: function(scope, element) {
-            $timeout(function(){
+        link: function (scope, element) {
+            $timeout(function () {
                 element.slimscroll({
                     height: '100%',
                     railOpacity: 0.9
@@ -339,25 +342,25 @@ function fullScroll($timeout){
             });
         }
     };
-}
+});
 
 /**
  * clockPicker - Directive for clock picker plugin
  */
-function clockPicker() {
+App.directive('clockPicker', function () {
     return {
         restrict: 'A',
         link: function(scope, element) {
                 element.clockpicker();
         }
     };
-};
+});
 
 
 /**
  * landingScrollspy - Directive for scrollspy in landing page
  */
-function landingScrollspy(){
+App.directive('landingScrollspy', function () {
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
@@ -367,30 +370,29 @@ function landingScrollspy(){
             });
         }
     }
-}
+});
 
 
 /**
  * fitHeight - Directive for set height fit to window height
  */
-function fitHeight(){
+App.directive('fitHeight', function () {
     return {
         restrict: 'A',
-        link: function(scope, element) {
+        link: function (scope, element) {
             element.css("height", $(window).height() + "px");
             element.css("min-height", $(window).height() + "px");
         }
     };
-}
+});
 
-
-function calendar() {
+App.directive('calendar', function () {
     return {
         require: 'ngModel',
         link: function (scope, el, attr, ngModel) {
             $(el).datepicker({
                 format: "dd-M-yyyy",
-                autoclose: true,             
+                autoclose: true,
                 todayHighlight: true,
                 keyboardNavigation: false,
                 forceParse: false,
@@ -402,31 +404,5 @@ function calendar() {
             });
         }
     };
-}
+});
 
-
-
-/**
- *
- * Pass all functions into module
- */
-angular
-    .module('msgBlaster')
-    .directive('pageTitle', pageTitle)
-    .directive('sideNavigation', sideNavigation)
-    .directive('iboxTools', iboxTools)
-    .directive('minimalizaSidebar', minimalizaSidebar)
-    .directive('vectorMap', vectorMap)
-    .directive('sparkline', sparkline)
-    .directive('icheck', icheck)
-    .directive('ionRangeSlider', ionRangeSlider)
-    .directive('dropZone', dropZone)
-    .directive('responsiveVideo', responsiveVideo)
-    .directive('chatSlimScroll', chatSlimScroll)
-    .directive('customValid', customValid)
-    .directive('fullScroll', fullScroll)
-    .directive('closeOffCanvas', closeOffCanvas)
-    .directive('clockPicker', clockPicker)
-    .directive('landingScrollspy', landingScrollspy)
-    .directive('fitHeight', fitHeight)
-    .directive('calendar', calendar);

@@ -1,4 +1,4 @@
-﻿
-function CreditRequestController() {
+﻿App.controller('CreditRequestController', function () {
 
-}
+
+});
