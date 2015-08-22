@@ -8,22 +8,24 @@
         <div class="col-lg-12" style="padding-left: 0px; padding-right: 0px;">
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
-                    <form id="ContactForm" name="ContactForm" class="form-horizontal" novalidate>
-
+                    <form role="form" name="ContactForm" class="form-horizontal" novalidate>
                         <div class="form-group">
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label">Name</label>
-                             <div class="col-sm-3 col-md-3 col-lg-3 first-name-txtbox">
-                                <input type="text" class="form-control" placeholder="First Name" name="FirstName" required />
+                             <div class="col-sm-3 col-md-3 col-lg-3 first-name-txtbox" ng-class="{'has-error': ContactForm.FirstName.$invalid && ContactForm.submitted}">
+                                <input type="text" class="form-control" name="FirstName" placeholder="First Name" ng-model="contact.FirstName" tooltip="{{ContactForm.FirstName.$valid && ContactForm.submitted ? '' : 'Enter first name between 2-15 characters.'}}" tooltip-trigger="focus" 
+                                 tooltip-placement="bottom" required="" />
                              </div>
-                            <div class="col-sm-3 col-md-3 col-lg-3">
-                                <input type="text" placeholder="Last Name" name="LastName" class="form-control" required>
+                            <div class="col-sm-3 col-md-3 col-lg-3" ng-class="{'has-error': ContactForm.LastName.$invalid && ContactForm.submitted}">
+                                <input type="text" placeholder="Last Name" name="LastName" ng-model="contact.LastName" class="form-control" tooltip="{{ContactForm.LastName.$valid && ContactForm.submitted ? '' : 'Enter last name between 2-15 characters.'}}" tooltip-trigger="focus" 
+                                 tooltip-placement="bottom" required="" />
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label">Mobile</label>
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <input type="text" name="Mobile" data-mask="9999999999" placeholder="" class="form-control" required>
+                            <div class="col-lg-3 col-md-3 col-sm-3" ng-class="{'has-error': ContactForm.Mobile.$invalid && ContactForm.submitted}">
+                                <input type="text" name="Mobile" data-mask="9999999999"  ng-model="contact.Mobile" placeholder="" class="form-control" tooltip="{{ContactForm.Mobile.$valid && ContactForm.submitted ? '' : 'Enter 10 digit mobile number.'}}" tooltip-trigger="focus" 
+                                 tooltip-placement="bottom" required="" />
                             </div>
                         </div>
 
@@ -31,11 +33,11 @@
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label">Gender</label>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="radio radio-success radio-inline">
-                                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
+                                    <input type="radio" id="inlineRadio1" ng-model="contact.Gender" value="Male" name="radioInline" ng-checked="true">
                                     <label for="inlineRadio1" class="font-noraml" style="line-height: 1.2;">Male</label>
                                 </div>
                                 <div class="radio radio-success radio-inline">
-                                    <input type="radio" id="inlineRadio2" value="option2" name="radioInline">
+                                    <input type="radio" id="inlineRadio2"  ng-model="contact.Gender" value="Female" name="radioInline">
                                     <label for="inlineRadio2" class="font-noraml" style="line-height: 1.2;">Female</label>
                                 </div>
                              </div>
@@ -63,8 +65,9 @@
 
                         <div class="form-group">
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label">Email</label>
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <input type="text" placeholder="" class="form-control">
+                            <div class="col-lg-6 col-md-6 col-sm-6" ng-class="{'has-error': ContactForm.Email.$error.email && ContactForm.submitted}">
+                                <input type="email" name="Email" placeholder="" ng-model="contact.Email" class="form-control" tooltip="{{ContactForm.Email.$error.email && ContactForm.submitted ? '' : 'Please enter valid email.'}}" tooltip-trigger="focus" 
+                                 tooltip-placement="bottom"/>
                             </div>
                         </div>
 
@@ -78,24 +81,24 @@
                         <div class="hr-line-dashed"></div>
 
                         <div class="form-group">
-                            <label class="col-lg-2 control-label">Select Groups </label>
+                            <label class="col-lg-2 col-md-2 control-label">Select Groups </label>
                         </div>
                         <div class="form-group">
-                            <label class="col-lg-2 control-label"></label>
+                            <label class="col-lg-2 col-md-2 control-label"></label>
 
-                            <div class="checkbox checkbox-success checkbox-inline col-lg-2">
+                            <div class="checkbox checkbox-success checkbox-inline col-lg-2 col-md-2">
                                 <input type="checkbox" id="Checkbox1" value="option1">
                                 <label for="inlineCheckbox1">Group1 </label>
                             </div>
-                            <div class="checkbox checkbox-success checkbox-inline col-lg-2">
+                            <div class="checkbox checkbox-success checkbox-inline col-lg-2 col-md-2">
                                 <input type="checkbox" id="Checkbox2" value="option1">
                                 <label for="inlineCheckbox1"> Group2 </label>
                             </div>
-                            <div class="checkbox checkbox-success checkbox-inline col-lg-2">
+                            <div class="checkbox checkbox-success checkbox-inline col-lg-2 col-md-2">
                                 <input type="checkbox" id="Checkbox3" value="option1">
                                 <label for="inlineCheckbox1"> Group3 </label>
                             </div>
-                            <div class="checkbox checkbox-success checkbox-inline col-lg-2">
+                            <div class="checkbox checkbox-success checkbox-inline col-lg-2 col-md-2">
                                 <input type="checkbox" id="Checkbox4" value="option1">
                                 <label for="inlineCheckbox1">Group4 </label>
                             </div>

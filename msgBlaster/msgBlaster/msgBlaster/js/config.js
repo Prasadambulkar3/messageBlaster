@@ -155,6 +155,15 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         url: "/addContact",
         templateUrl: "../msgBlaster/views/contact/create/createContact.html",
         data: { pageTitle: 'Add Contact' },
+        resolve: {
+            loadPlugin: function ($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                       {
+                           files: ['js/plugins/jasny/jasny-bootstrap.min.js']
+                       }
+                ]);
+            }
+        }
     })
 
     .state('app.createCampaign', {
