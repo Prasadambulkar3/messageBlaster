@@ -1,5 +1,5 @@
 ﻿
-App.controller('profileController', function ($modalInstance, CommonService) {
+App.controller('profileController', function ($scope, $modalInstance, CommonService) {
     var d = CommonService.profileData()
 
     d.then(function (data) {
@@ -9,12 +9,12 @@ App.controller('profileController', function ($modalInstance, CommonService) {
         console.log("error");
     });
 
-    this.save = function (data) {
+    $scope.save = function (data) {
         CommonService.updateProfileData(data);
         $modalInstance.close();
     }
 
-    this.cancel = function () {
+    $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
     }
 });

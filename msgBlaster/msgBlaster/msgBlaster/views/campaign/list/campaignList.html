@@ -1,4 +1,4 @@
-﻿<div ng-controller="CampaignListController as campaign">
+﻿<div ng-controller="CampaignListController">
     <div class="row wrapper border-bottom white-bg page-heading" style="padding-bottom: 0;">
         <div class="col-lg-10">
             <h2 style="margin-top: 10px;">Campaigns</h2>
@@ -22,7 +22,7 @@
                             <a ui-sref="app.createCampaign" class="col-lg-5 btn btn-primary btn-sm pull-right">Add</a>
                         </div>
                     </div>
-                    <div id="Grid" ej-grid e-datasource="campaign.data" e-query="campaign.query" e-columns="campaign.columns" e-allowsorting="campaign.allowsorting" e-sortsettings="campaign.sortsettings" e-allowpaging="campaign.allowpaging" e-pagesettings="campaign.pagesettings"></div>
+                    <div id="Grid" ej-grid e-datasource="data" e-query="query" e-columns="columns" e-allowsorting="allowsorting" e-sortsettings="sortsettings" e-allowpaging="allowpaging" e-pagesettings="pagesettings"></div>
                 </div>
             </div>
         </div>

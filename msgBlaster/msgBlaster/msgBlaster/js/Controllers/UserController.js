@@ -1,5 +1,5 @@
 ﻿
-App.controller('UserController', function () {
+App.controller('UserController', function ($scope) {
 
     //alert("ContactController");
 

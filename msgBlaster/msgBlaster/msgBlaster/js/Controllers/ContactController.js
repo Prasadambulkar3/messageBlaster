@@ -1,10 +1,14 @@
 ﻿
-App.controller('ContactController', function () {
+App.controller('ContactController', function ($scope, GroupService) {
 
+    var groups = GroupService.getGroupList(1);
 
+    groups.then(function (data) {     
+        $scope.Groups = data;        
+    });  
 });
 
-App.controller('ContactListController', function () {
+App.controller('ContactListController', function ($scope) {
 
     var newColumns = [
                           { field: "Name", headerText: "Name", width: 75, textAlign: ej.TextAlign.Right },
@@ -15,29 +19,29 @@ App.controller('ContactListController', function () {
                           { field: "Gender", headerText: "Gender ", width: 75, textAlign: ej.TextAlign.Right },
     ];
 
-    this.columns = newColumns;
+    $scope.columns = newColumns;
 
-    this.tools = { showToolbar: false, toolbarItems: [ej.Grid.ToolBarItems.Add, ej.Grid.ToolBarItems.Edit, ej.Grid.ToolBarItems.Delete, ej.Grid.ToolBarItems.ExcelExport, ej.Grid.ToolBarItems.WordExport, ej.Grid.ToolBarItems.PdfExport, ej.Grid.ToolBarItems.PrintGrid] };
+    $scope.tools = { showToolbar: false, toolbarItems: [ej.Grid.ToolBarItems.Add, ej.Grid.ToolBarItems.Edit, ej.Grid.ToolBarItems.Delete, ej.Grid.ToolBarItems.ExcelExport, ej.Grid.ToolBarItems.WordExport, ej.Grid.ToolBarItems.PdfExport, ej.Grid.ToolBarItems.PrintGrid] };
 
-    this.data = ej.DataManager({ url: "http://192.168.1.52/msgblasterApi/api/Contact/GetContactsbyClientId?clientId=1", adaptor: "WebApiAdaptor", offline: true });
+    $scope.data = ej.DataManager({ url: "http://192.168.1.52/msgblasterApi/api/Contact/GetContactsbyClientId?clientId=1", adaptor: "WebApiAdaptor", offline: true });
 
-    this.allowpaging = { allowPaging: true };
+    $scope.allowpaging = { allowPaging: true };
 
-    this.pagesettings = { pageSize: 11 };
+    $scope.pagesettings = { pageSize: 11 };
 
-    this.edittsetings = { allowEditing: true, editMode: ej.Grid.EditMode.Normal };
+    $scope.edittsetings = { allowEditing: true, editMode: ej.Grid.EditMode.Normal };
 
     //For adjust width of column
-    this.allowResizing = { allowResizing: true };
+    $scope.allowResizing = { allowResizing: true };
 
     //For reorder using drag and drop
-    this.allowReordering = { allowReordering: true };
+    $scope.allowReordering = { allowReordering: true };
 
-    this.allowsorting = { allowSorting: true };
+    $scope.allowsorting = { allowSorting: true };
 
-    this.sortsettings = { sortedColumns: [{ field: "Id", direction: ej.sortOrder.Ascending }] }
+    $scope.sortsettings = { sortedColumns: [{ field: "Id", direction: ej.sortOrder.Ascending }] }
 
-    this.actionBegin = function (args) {
+    $scope.actionBegin = function (args) {
         if (args.requestType == "beginedit") {
             LeadListController.prototype.IdValue = args.model.currentViewData[args.rowIndex].LeadID;
             console.log(args.model.currentViewData);
@@ -47,23 +51,23 @@ App.controller('ContactListController', function () {
         }
     }
 
-    this.toolbarHandler = function (e) {
-        this.exportGrid = this["export"];
+    $scope.toolbarHandler = function (e) {
+        $scope.exportGrid = $scope["export"];
         if (e.itemName == "Add") {
             $state.go('system.Lead');
             e.cancel = true;
         }
 
         else if (e.itemName == "Excel Export") {
-            this.exportGrid('http://localhost:49501/api/program/ExcelExport')
+            $scope.exportGrid('http://localhost:49501/api/program/ExcelExport')
             e.cancel = true;
         }
         else if (e.itemName == "Word Export") {
-            this.exportGrid('http://localhost:49501/api/program/WordExport')
+            $scope.exportGrid('http://localhost:49501/api/program/WordExport')
             e.cancel = true;
         }
         else if (e.itemName == "PDF Export") {
-            this.exportGrid('http://localhost:49501/api/program/PdfExport')
+            $scope.exportGrid('http://localhost:49501/api/program/PdfExport')
             e.cancel = true;
         }
     }

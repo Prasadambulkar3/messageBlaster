@@ -1,4 +1,4 @@
-<div ng-controller="GroupController as group">
+<div ng-controller="GroupController">
     <div class="row wrapper border-bottom white-bg page-heading" style="padding-bottom: 0;">
         <div class="col-lg-10">
             <h2 style="margin-top: 10px;">Groups</h2>
@@ -21,7 +21,7 @@
                         <form role="form" class="form-inline animated fadeIn pull-right" ng-hide="group.addingGroup">
                             <div class="pull-right m-r">
                                 <div class="form-group" style="padding-bottom: 4px;">
-                                    <input type="text" placeholder="Group Name" class="form-control" ng-model="group.groupName">
+                                    <input type="text" placeholder="Group Name" class="form-control" ng-model="group.groupName"/>
                                 </div>
                                 <button class="btn btn-sm btn-primary md" ng-click="group.createGroup(group.groupName)">Save</button>
                                 <button class="btn btn-sm btn-white md" ng-click="group.addingGroup=true">Cancel</button>
@@ -29,7 +29,9 @@
                         </form>
                     </div>
                     <div class="">
-                        <div id="Grid" ej-grid e-datasource="group.data" e-query="group.query" e-columns="group.columns" e-editsettings="group.edittsetings" e-allowsorting="group.allowsorting" e-sortsettings="group.sortsettings" e-editsettings="group.editsettings" e-actioncomplete="group.complete" e-enablerowhover="false" e-enableautosaveonselectionchange="false" e-create="group.create" e-endEdit='group.editHandler' e-endAdd="group.addHandler" e-endDelete="group.deleteHandler"></div>
+                      <!--  <div id="Grid" ej-grid e-datasource="data" e-query="group.query" e-columns="group.columns" e-editsettings="group.edittsetings" e-allowsorting="group.allowsorting" e-sortsettings="group.sortsettings" e-editsettings="group.editsettings" e-actioncomplete="group.complete" e-enablerowhover="false" e-enableautosaveonselectionchange="false" e-create="group.create" e-endEdit='group.editHandler' e-endAdd="group.addHandler" e-endDelete="group.deleteHandler"></div>
+          -->
+                <div id="Grid" ej-grid e-datasource="data" e-columns="columns"  e-editsettings="edittsetings"  e-enableautosaveonselectionchange="false" e-query="query" ></div>
           
                 
 

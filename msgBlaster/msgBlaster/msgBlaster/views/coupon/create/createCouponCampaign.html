@@ -1,4 +1,4 @@
-﻿<div ng-controller="CouponCampaignController as couponCampaign">
+﻿<div ng-controller="CouponCampaignController">
 <div class="row wrapper border-bottom white-bg page-heading" style="padding-bottom: 0;">
     <div class="col-lg-7 col-md-5">
         <h2 style="margin-top: 10px;">New Coupon Campaign</h2>
@@ -80,7 +80,7 @@
                         <label class="col-lg-1 col-md-2 col-sm-2 control-label txt-with-drpdwn-no-padding">Expiry Date</label>
                         <div class="col-lg-3 col-md-3 col-sm-3">
                             <div class="input-group date">
-                                <input type="datetime" class="form-control" calendar ng-model="couponCampaign.ExpiryDate" view="date" auto-close="true">
+                                <input type="datetime" class="form-control" calendar ng-model="ExpiryDate" view="date" auto-close="true">
                                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                         <label class="col-lg-3 col-md-3 col-sm-3 control-label">Scheduled Date</label>
                         <div class="col-lg-3 col-md-3 col-sm-3">
                             <div class="input-group date">
-                                <input type="datetime" class="form-control" calendar ng-model="couponCampaign.ScheduledDate" view="date" auto-close="true">
+                                <input type="datetime" class="form-control" calendar ng-model="ScheduledDate" view="date" auto-close="true">
                                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                             </div>
                          </div>

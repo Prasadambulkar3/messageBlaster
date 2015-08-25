@@ -1,4 +1,4 @@
-﻿App.controller('CreditRequestController', function () {
+﻿App.controller('CreditRequestController', function ($scope) {
 
 
 });

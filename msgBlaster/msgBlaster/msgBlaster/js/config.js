@@ -1,3 +1,4 @@
+
 /**
  * INSPINIA - Responsive Admin Theme
  *
@@ -23,16 +24,16 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         .state('app', {
             abstract: true,
             url: "/app",
-             templateUrl: "views/common/content.html", resolve: {
-                 loadPlugin: function ($ocLazyLoad) {
-                     return $ocLazyLoad.load([
-                         {
-                             name: 'App.services',
-                             files: ['js/Services/DataAccessService.js', 'js/Services/CommonService.js']
-                         },
-                     ]);
-                 }
-             }
+            templateUrl: "views/common/content.html", resolve: {
+                loadPlugin: function ($ocLazyLoad) {
+                    return $ocLazyLoad.load([
+                        {
+                            name: 'App.services',
+                            files: ['js/Services/DataAccessService.js', 'js/Services/CommonService.js']
+                        },
+                    ]);
+                }
+            }
         })
 
     .state('app.dashboard', {
@@ -43,10 +44,10 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             loadPlugin: function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
                     {
-                            name: 'App.controllers',
-                            files: ['js/Controllers/DashboardController.js']
-                        },
-                        {
+                        name: 'App.controllers',
+                        files: ['js/Controllers/DashboardController.js']
+                    },
+                    {
                         serie: true,
                         name: 'angular-flot',
                         files: ['js/plugins/flot/jquery.flot.js', 'js/plugins/flot/jquery.flot.time.js', 'js/plugins/flot/jquery.flot.tooltip.min.js', 'js/plugins/flot/jquery.flot.spline.js', 'js/plugins/flot/jquery.flot.resize.js', 'js/plugins/flot/jquery.flot.pie.js', 'js/plugins/flot/curvedLines.js', 'js/plugins/flot/angular-flot.js', ]
@@ -69,85 +70,65 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
     .state('app.users', {
         url: "/users",
         templateUrl: "../msgBlaster/views/user/list/userList.html",
-            data: { pageTitle: 'Users' },
-            resolve: {
-                loadPlugin: function ($ocLazyLoad) {
-                    return $ocLazyLoad.load([
-                        {
-                            name: 'App.controllers',
-                            files: ['js/Controllers/UserController.js']
-                        }
-                    ]);
-                }
+        data: { pageTitle: 'Users' },
+        resolve: {
+            loadPlugin: function ($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                    {
+                        name: 'App.controllers',
+                        files: ['js/Controllers/UserController.js']
+                    }
+                ]);
             }
+        }
     })
 
     .state('app.profile', {
         url: "/profile",
         templateUrl: "../msgBlaster/views/client/profile.html",
-            data: { pageTitle: 'Profile' },
-            resolve: {
-                loadPlugin: function ($ocLazyLoad) {
-                    return $ocLazyLoad.load([
-                        {
-                            name: 'App.controllers',
-                            files: ['js/Controllers/ProfileController.js']
-                        }
-                    ]);
-                }
+        data: { pageTitle: 'Profile' },
+        resolve: {
+            loadPlugin: function ($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                    {
+                        name: 'App.controllers',
+                        files: ['js/Controllers/ProfileController.js']
+                    }
+                ]);
             }
+        }
     })
-
-    .state('app.groups', {
-        url: "/groups",
-        templateUrl: "../msgBlaster/views/group/list/groupList.html",
-            data: { pageTitle: 'Projects' },
-            resolve: {
-                loadPlugin: function ($ocLazyLoad) {
-                    return $ocLazyLoad.load([
-                        {
-                            name: 'App.controllers',
-                            files: ['js/Controllers/GroupController.js']
-                        },
-                        {
-                            name: 'App.services',
-                            files: ['js/Services/GroupService.js']
-                        }
-                    ]);
-                }
-            }
-    })
-
+   
     .state('app.templates', {
         url: "/templates",
         templateUrl: "../msgBlaster/views/template/list/templateList.html",
-            data: { pageTitle: 'Templates' },
-            resolve: {
-                loadPlugin: function ($ocLazyLoad) {
-                    return $ocLazyLoad.load([
-                        {
-                            name: 'App.controllers',
-                            files: ['js/Controllers/TemplateController.js']
-                        }
-                    ]);
-                }
+        data: { pageTitle: 'Templates' },
+        resolve: {
+            loadPlugin: function ($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                    {
+                        name: 'App.controllers',
+                        files: ['js/Controllers/TemplateController.js']
+                    }
+                ]);
             }
+        }
     })
 
     .state('app.locations', {
         url: "/locations",
         templateUrl: "../msgBlaster/views/location/list/locationList.html",
-            data: { pageTitle: 'Locations' },
-            resolve: {
-                loadPlugin: function ($ocLazyLoad) {
-                    return $ocLazyLoad.load([
-                        {
-                            name: 'App.controllers',
-                            files: ['js/Controllers/LocationController.js']
-                        }
-                    ]);
-                }
+        data: { pageTitle: 'Locations' },
+        resolve: {
+            loadPlugin: function ($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                    {
+                        name: 'App.controllers',
+                        files: ['js/Controllers/LocationController.js']
+                    }
+                ]);
             }
+        }
     })
 
     .state('app.contacts', {
@@ -158,15 +139,15 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             loadPlugin: function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
                     {
-                          name: 'App.controllers',
-                          // insertBefore: '#ng_load_plugins_before',
-                           files: ['js/Controllers/ContactController.js']
-                       },                                         
-                       {
-                        insertBefore: '#loadBefore',
-                        name: 'localytics.directives',
-                        files: ['css/plugins/chosen/chosen.css', 'js/plugins/chosen/chosen.jquery.js', 'js/plugins/chosen/chosen.js']
+                        name: 'App.controllers',
+                        // insertBefore: '#ng_load_plugins_before',
+                        files: ['js/Controllers/ContactController.js']
                     },
+                       {
+                           insertBefore: '#loadBefore',
+                           name: 'localytics.directives',
+                           files: ['css/plugins/chosen/chosen.css', 'js/plugins/chosen/chosen.jquery.js', 'js/plugins/chosen/chosen.js']
+                       },
                 ]);
             }
         }
@@ -180,12 +161,12 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             loadPlugin: function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
                     {
-                            name: 'App.controllers',
-                            files: ['js/Controllers/ImportContactsController.js']
-                        },
+                        name: 'App.controllers',
+                        files: ['js/Controllers/ImportContactsController.js']
+                    },
                         {
-                        files: ['css/plugins/dropzone/basic.css', 'css/plugins/dropzone/dropzone.css', 'js/plugins/dropzone/dropzone.js']
-                    }
+                            files: ['css/plugins/dropzone/basic.css', 'css/plugins/dropzone/dropzone.css', 'js/plugins/dropzone/dropzone.js']
+                        }
                 ]);
             }
         }
@@ -199,12 +180,12 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             loadPlugin: function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
                     {
-                            name: 'App.controllers',
-                            files: ['js/Controllers/CampaignController.js']
-                        },
+                        name: 'App.controllers',
+                        files: ['js/Controllers/CampaignController.js']
+                    },
                         {
-                        files: ['css/plugins/dropzone/basic.css', 'css/plugins/dropzone/dropzone.css', 'js/plugins/dropzone/dropzone.js']
-                    }
+                            files: ['css/plugins/dropzone/basic.css', 'css/plugins/dropzone/dropzone.css', 'js/plugins/dropzone/dropzone.js']
+                        }
                 ]);
             }
         }
@@ -218,12 +199,12 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             loadPlugin: function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
                     {
-                          name: 'App.controllers',
-                          files: ['js/Controllers/CouponController.js']
-                      },
+                        name: 'App.controllers',
+                        files: ['js/Controllers/CouponController.js']
+                    },
                       {
-                        files: ['css/plugins/dropzone/basic.css', 'css/plugins/dropzone/dropzone.css', 'js/plugins/dropzone/dropzone.js']
-                    }
+                          files: ['css/plugins/dropzone/basic.css', 'css/plugins/dropzone/dropzone.css', 'js/plugins/dropzone/dropzone.js']
+                      }
                 ]);
             }
         }
@@ -233,16 +214,16 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         url: "/creditRequests",
         templateUrl: "../msgBlaster/views/creditRequest/list/creditRequestList.html",
         data: { pageTitle: 'Credit Requests' },
-         resolve: {
-             loadPlugin: function ($ocLazyLoad) {
-                 return $ocLazyLoad.load([
-                     {
-                         name: 'App.controllers',
-                         files: ['js/Controllers/CreditRequestsController.js']
-                     }
-                 ]);
-             }
-         }
+        resolve: {
+            loadPlugin: function ($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                    {
+                        name: 'App.controllers',
+                        files: ['js/Controllers/CreditRequestsController.js']
+                    }
+                ]);
+            }
+        }
     })
 
     .state('app.createContact', {
@@ -252,31 +233,39 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
         resolve: {
             loadPlugin: function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
-                       {
-                           files: ['js/plugins/jasny/jasny-bootstrap.min.js']
-                       }
+                     {
+                         name: 'App.services',
+                         files: ['js/Services/GroupService.js']
+                     },
+                     {
+                         name: 'App.controllers',
+                         files: ['js/Controllers/ContactController.js']
+                     },
+                     {
+                         files: ['js/plugins/jasny/jasny-bootstrap.min.js']
+                     }
                 ]);
             }
         }
     })
 
     .state('app.createCampaign', {
-    url: "/addCampaign",
-    templateUrl: "../msgBlaster/views/campaign/create/createCampaign.html",
-    data: { pageTitle: 'Add Campaign' },
-})
+        url: "/addCampaign",
+        templateUrl: "../msgBlaster/views/campaign/create/createCampaign.html",
+        data: { pageTitle: 'Add Campaign' },
+    })
 
     .state('app.createCouponCampaign', {
-    url: "/addCouponCampaign",
-    templateUrl: "../msgBlaster/views/coupon/create/createCouponCampaign.html",
-    data: { pageTitle: 'Add Campaign' },
-})
+        url: "/addCouponCampaign",
+        templateUrl: "../msgBlaster/views/coupon/create/createCouponCampaign.html",
+        data: { pageTitle: 'Add Campaign' },
+    })
 
     .state('app.createUser', {
-    url: "/addUser",
-    templateUrl: "../msgBlaster/views/user/create/createUser.html",
-    data: { pageTitle: 'Add User' },
-})
+        url: "/addUser",
+        templateUrl: "../msgBlaster/views/user/create/createUser.html",
+        data: { pageTitle: 'Add User' },
+    })
 
     .state('app.createCreditRequest', {
         url: "/addCreditRequest",

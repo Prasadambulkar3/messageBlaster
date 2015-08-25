@@ -7,13 +7,13 @@ var App = angular.module('App.directives', []);
 
 App.directive('pageTitle', function ($rootScope, $timeout) {
     return {
-        link: function(scope, element) {
-            var listener = function(event, toState, toParams, fromState, fromParams) {
+        link: function (scope, element) {
+            var listener = function (event, toState, toParams, fromState, fromParams) {
                 // Default title - load on Dashboard 1
                 var title = 'msgBlaster | Responsive Admin Theme';
                 // Create your own title pattern
                 if (toState.data && toState.data.pageTitle) title = 'msgBlaster | ' + toState.data.pageTitle;
-                $timeout(function() {
+                $timeout(function () {
                     element.text(title);
                 });
             };
@@ -29,9 +29,9 @@ App.directive('pageTitle', function ($rootScope, $timeout) {
 App.directive('sideNavigation', function ($timeout) {
     return {
         restrict: 'A',
-        link: function(scope, element) {
+        link: function (scope, element) {
             // Call the metsiMenu plugin and plug it to sidebar navigation
-            $timeout(function(){
+            $timeout(function () {
                 element.metisMenu();
 
             });
@@ -87,7 +87,7 @@ App.directive('iboxTools', function ($timeout) {
                     ibox.find('[id^=map-]').resize();
                 }, 50);
             },
-                // Function for close ibox
+            // Function for close ibox
                 $scope.closebox = function () {
                     var ibox = $element.closest('div.ibox');
                     ibox.remove();
@@ -114,7 +114,7 @@ App.directive('minimalizaSidebar', function ($timeout) {
                         function () {
                             $('#side-menu').fadeIn(500);
                         }, 100);
-                } else if ($('body').hasClass('fixed-sidebar')){
+                } else if ($('body').hasClass('fixed-sidebar')) {
                     $('#side-menu').hide();
                     setTimeout(
                         function () {
@@ -192,7 +192,7 @@ App.directive('sparkline', function () {
             scope.$watch(scope.sparkData, function () {
                 render();
             });
-            scope.$watch(scope.sparkOptions, function(){
+            scope.$watch(scope.sparkOptions, function () {
                 render();
             });
             var render = function () {
@@ -350,8 +350,8 @@ App.directive('fullScroll', function ($timeout) {
 App.directive('clockPicker', function () {
     return {
         restrict: 'A',
-        link: function(scope, element) {
-                element.clockpicker();
+        link: function (scope, element) {
+            element.clockpicker();
         }
     };
 });
@@ -391,6 +391,7 @@ App.directive('calendar', function () {
         require: 'ngModel',
         link: function (scope, el, attr, ngModel) {
             $(el).datepicker({
+                endDate: new Date(),
                 format: "dd-M-yyyy",
                 autoclose: true,
                 todayHighlight: true,
@@ -400,7 +401,29 @@ App.directive('calendar', function () {
                     scope.$apply(function () {
                         ngModel.$setViewValue(dateText);
                     });
-                }
+                }, 
+            });
+        }
+    };
+});
+
+
+App.directive('pastdatesonly', function() {
+    return {
+        restrict: 'A',
+        require : 'ngModel',
+        link: function(scope, element, attrs, ngModelCtrl) {
+            element.datepicker({
+                format: "dd-M-yyyy",
+                autoclose: true,
+                todayHighlight: true,
+                language: 'en',
+                pickTime: false,
+             //   startDate: '01-11-2013',      // set a minimum date
+                endDate: new Date()          // set a maximum date
+            }).on('changeDate', function(e) {
+                ngModelCtrl.$setViewValue(e.date);
+                scope.$apply();
             });
         }
     };
