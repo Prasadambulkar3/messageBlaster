@@ -5,31 +5,17 @@ App.service('ApplicationSettingService', function () {
     
     this.WebApiUrl = "http://localhost:63138/";
 
-    this.LoginPagePath = "/msgblaster-ui/Login.html";
+    this.LoginPagePath = "./Login.html";
 
-    this.StartupPagePath = "./app/view/shared/Layout.html";
-
-    this.StartupPageRegistration = "./Layout.html";
-
-    this.StartupPagePathCouponUser = "./app/view/shared/CouponUserLayout.html";
-
-    this.documentPath = "D:/Projects/msgblaster-ui/app/data/documents/";
+    this.StartupPagePath = "./index.html";
 
     this.CouponCampaignMessage = "Your CouponCode is: [Code]"
 
-    this.RecordsPerPage = 10;
-
-    this.PaginationLength = 5;
-
     this.datePlaceHolderText = "dd-mm-yyyy";
 
-    this.APIMode = true;
-
-    this.SystemUser = { "Id": 101, "Name": "Admin" }
-
-    this.columnSize;
-
     this.VerificationCodeSentLimit = 3;
+
+    this.APIMode = true;
 });
 
 App.service('DataAccessService', function ($http, $q, $window, ApplicationSettingService) {

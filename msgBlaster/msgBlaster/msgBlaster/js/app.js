@@ -12,6 +12,7 @@ angular.module('App', [
         'ejangular',
         'ngRoute',
         'ngResource',
+        'ngCookies',
         'App.services',
         'App.directives',
         'App.controllers'
