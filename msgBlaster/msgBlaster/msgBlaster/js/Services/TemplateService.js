@@ -1,0 +1,7 @@
+﻿
+App.service('TemplateService', function () {
+
+
+});
+
+

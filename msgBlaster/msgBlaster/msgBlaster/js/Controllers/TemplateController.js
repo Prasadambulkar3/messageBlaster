@@ -12,12 +12,31 @@ App.controller('TemplateListController', function ($scope, $modal) {
 });
 
 
-App.controller('TemplateController', function ($scope, $modal, $modalInstance) {
+App.controller('TemplateController', function ($scope, $rootScope, $modal, $modalInstance) {
 
-    $scope.save = function () {
-        //CommonService.updateProfileData(data);
-        $modalInstance.close();
-    }
+    var clientId = $rootScope.loggedPerson.ClientId;
+    $scope.characterCount = 0;
+   
+
+    $scope.save = function (Template, valid, title) {
+
+        if (valid && (title == 'false')) {
+            Template.ClientId = $rootScope.loggedPerson.ClientId;
+            var template = TemplateService.createTemplate(Template);
+
+            template.then(function (data) {
+                console.log("success");
+                $modalInstance.dismiss();
+                toastr.success('Template edited successfully!');
+                $route.reload();
+
+            }, function (error) {
+                console.log("error");
+                toastr.error('There is an error while editing template');
+            });
+
+        }
+    }  
 
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');

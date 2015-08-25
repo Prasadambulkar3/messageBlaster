@@ -32,7 +32,7 @@ App.controller('ContactController', function ($scope, $routeParams, $rootScope, 
                 toastr.success('Contact created successfully!');
                 $state.go('app.contacts');
             }, function (error) {
-                toastr.warning('There is an error while creating contact');
+                toastr.error('There is an error while creating contact');
             });
         }
     }
