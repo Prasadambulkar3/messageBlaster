@@ -1,3 +1,4 @@
+/// <reference path="plugins/cre" />
 
 /**
  * INSPINIA - Responsive Admin Theme
@@ -98,7 +99,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
             }
         }
     })
-   
+
     .state('app.templates', {
         url: "/templates",
         templateUrl: "../msgBlaster/views/template/list/templateList.html",
@@ -243,6 +244,9 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, IdlePro
                      },
                      {
                          files: ['js/plugins/jasny/jasny-bootstrap.min.js']
+                     },
+                     {
+                         files: ['js/plugins/moment/moment.min.js']
                      }
                 ]);
             }

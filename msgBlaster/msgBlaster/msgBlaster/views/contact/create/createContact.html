@@ -47,7 +47,7 @@
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label">Birth Date</label>
                             <div class="col-lg-3 col-md-3 col-sm-3">
                                 <div class="input-group date">
-                                    <input type="datetime" class="form-control" pastdatesonly ng-model="Contact.BirthDate" view="date" auto-close="true">
+                                    <input type="datetime" class="form-control" pastdatesonly ng-model="Contact.BirthDate" ng-change="validateAnniversary(Contact.BirthDate, Contact.AnniversaryDate)" view="date" auto-close="true">
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 </div>
 
@@ -58,9 +58,12 @@
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label">Anniversary</label>
                             <div class="col-lg-3 col-md-3 col-sm-3">
                                 <div class="input-group date">
-                                    <input type="datetime" class="form-control" pastdatesonly ng-model="Contact.Anniversary" view="date" auto-close="true">
+                                    <input type="datetime" class="form-control" pastdatesonly ng-model="Contact.AnniversaryDate" ng-change="validateAnniversary(Contact.BirthDate, Contact.AnniversaryDate)" view="date" auto-close="true">
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 </div>
+                                <span class="error" ng-show="InValidAnniversary && !ContactForm.AnniversaryDate.$error.validDate" style="clear: both;">Anniversary date should be greater than birthdate.</span>
+                                <span class="error" ng-show="ContactForm.AnniversaryDate.$error.validDate">Invalid anniversary date.</span>
+
                             </div>
                         </div>
 
@@ -75,7 +78,7 @@
                         <div class="form-group">
                             <div class="col-sm-4 col-md-5 col-lg-5 col-sm-offset-3">
                                 <a ui-sref="app.contacts" class="btn btn-white" type="submit">Cancel</a>
-                                <button class="btn btn-primary" type="submit" ng-click="ContactForm.submitted=true;">Save</button>
+                                <button class="btn btn-primary" type="submit" ng-click="save(Contact,ContactForm.$valid,InValidAnniversary);ContactForm.submitted=true;">Save</button>
                             </div>
                         </div>
 
@@ -86,10 +89,14 @@
                         </div>
                         <div class="form-group">
                             <label class="col-lg-2 col-md-2 control-label"></label>
+                            <div class="checkbox checkbox-success checkbox-inline hideOverflow col-lg-2 col-md-2">
+                                <input type="checkbox" id="Checkbox1" value="option1"  ng-model="Group.IsAllChecked" ng-change="selectAll(Group)">
+                                <label for="inlineCheckbox1">Select All</label>
+                            </div>
                             <div ng-repeat="group in Groups">
-                                <div class="checkbox checkbox-success checkbox-inline col-lg-2 col-md-2">
-                                    <input type="checkbox" id="Checkbox1" value="option1">
-                                    <label for="inlineCheckbox1">{{group.Name}}</label>
+                                <div class="checkbox checkbox-success checkbox-inline hideOverflow col-lg-2 col-md-2">
+                                    <input type="checkbox" id="Checkbox" value="option1" ng-model="group.IsChecked" ng-change="selectGroups(group)" ng-checked="allSelected || group.IsChecked" ng-disabled="allSelected">
+                                    <label for="inlineCheckbox1" title="{{group.Name}}">{{group.Name}}</label>
                                 </div>
                             </div>
                         </div>
