@@ -1,11 +1,11 @@
 ﻿
-App.controller('LocationController', function () {
+App.controller('LocationController', function ($scope) {
 
     //alert("ContactController");
-    this.addingLocation = true;
+    $scope.addingLocation = true;
 
-    this.createLocation = function (locationName) {
-        this.locationName = "";
+    $scope.createLocation = function (locationName) {
+        $scope.locationName = "";
         //var data = {};
         //data.Name = locationName;
         //data.ClientId = 1;
@@ -25,6 +25,6 @@ App.controller('LocationController', function () {
         //}, function (error) {
         //    console.log("error");
         //});
-        this.addingLocation = true;
+        $scope.addingLocation = true;
     }
 });

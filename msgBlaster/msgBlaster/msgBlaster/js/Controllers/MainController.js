@@ -1,15 +1,15 @@
 ﻿
 var App = angular.module('App.controllers', []);
 
-App.controller('MainController', function () {
+App.controller('MainController', function ($scope) {
 
-    this.send = function () {
+    $scope.send = function () {
         alert("send");
     }
 
-    this.links = [
+    $scope.links = [
                   { state: "app.dashboard", icon: "fa fa-th-large", linkName: "Dashboard" },
-                  { state: "app.groups", icon: "fa fa-group", linkName: "Groups" },
+                  //{ state: "app.groups", icon: "fa fa-group", linkName: "Groups" },
                   { state: "app.contacts", icon: "fa fa-book", linkName: "Contacts" },
                   { state: "app.campaigns", icon: "fa fa-edit", linkName: "Campaigns" },
                   { state: "app.coupons", icon: "fa fa-sitemap", linkName: "Coupons" },
@@ -22,7 +22,7 @@ App.controller('MainController', function () {
                   { state: "app.settings", icon: "fa fa-gear", linkName: "Settings" },
     ];
 
-    this.groups = [
+    $scope.groups = [
       'Family',
       'Friends',
       'My Group',

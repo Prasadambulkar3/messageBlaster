@@ -1,4 +1,4 @@
-﻿<div ng-controller="CreditRequestController as creditRequest">
+﻿<div ng-controller="CreditRequestController">
 <div class="row wrapper border-bottom white-bg page-heading" style="padding-bottom: 0;">
     <div class="col-lg-10 col-md-10">
         <h2 style="margin-top: 10px;">New Credit Request</h2>
@@ -139,7 +139,7 @@
                         <label class="col-lg-4 col-md-4 col-sm-4 control-label">Cheque Date</label>
                         <div class="col-lg-3 col-md-4 col-sm-4">
                             <div class="input-group date">
-                                <input type="datetime" class="form-control" calendar ng-model="creditRequest.ChequeDate" view="date" auto-close="true">
+                                <input type="datetime" class="form-control" calendar ng-model="ChequeDate" view="date" auto-close="true">
                                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                             </div>
                         </div>

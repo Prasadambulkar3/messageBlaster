@@ -1,5 +1,5 @@
 ﻿
-App.controller('DashboardController', function () {
+App.controller('DashboardController', function ($scope) {
 
     var data1 = [
         [gd(2012, 1, 1), 7],

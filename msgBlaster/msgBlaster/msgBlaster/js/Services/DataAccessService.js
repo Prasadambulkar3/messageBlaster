@@ -2,7 +2,7 @@
 var App = angular.module('App.services', []);
 
 App.service('ApplicationSettingService', function () {
-
+    
     this.WebApiUrl = "http://localhost:63138/";
 
     this.LoginPagePath = "/msgblaster-ui/Login.html";

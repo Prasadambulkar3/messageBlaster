@@ -1,6 +1,6 @@
-﻿App.controller('SendMessageController', function () {
+﻿App.controller('SendMessageController', function ($scope) {
 
-    this.send = function () {
+    $scope.send = function () {
         alert("send");
     }
 

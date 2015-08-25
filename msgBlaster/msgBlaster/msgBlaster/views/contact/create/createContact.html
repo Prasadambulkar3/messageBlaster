@@ -1,4 +1,4 @@
-﻿<div ng-controller="ContactController as contact">
+﻿<div ng-controller="ContactController">
     <div class="row wrapper border-bottom white-bg page-heading" style="padding-bottom: 0;">
         <div class="col-lg-10">
             <h2 style="margin-top: 10px;">New Contact</h2>
@@ -11,21 +11,21 @@
                     <form role="form" name="ContactForm" class="form-horizontal" novalidate>
                         <div class="form-group">
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label">Name</label>
-                             <div class="col-sm-3 col-md-3 col-lg-3 first-name-txtbox" ng-class="{'has-error': ContactForm.FirstName.$invalid && ContactForm.submitted}">
-                                <input type="text" class="form-control" name="FirstName" placeholder="First Name" ng-model="contact.FirstName" tooltip="{{ContactForm.FirstName.$valid && ContactForm.submitted ? '' : 'Enter first name between 2-15 characters.'}}" tooltip-trigger="focus" 
-                                 tooltip-placement="bottom" required="" />
-                             </div>
+                            <div class="col-sm-3 col-md-3 col-lg-3 first-name-txtbox" ng-class="{'has-error': ContactForm.FirstName.$invalid && ContactForm.submitted}">
+                                <input type="text" class="form-control" name="FirstName" placeholder="First Name" ng-model="Contact.FirstName" required="" />
+                                <span class="error" ng-show="ContactForm.submitted && ContactForm.FirstName.$error.required">First Name is required</span>
+                            </div>
                             <div class="col-sm-3 col-md-3 col-lg-3" ng-class="{'has-error': ContactForm.LastName.$invalid && ContactForm.submitted}">
-                                <input type="text" placeholder="Last Name" name="LastName" ng-model="contact.LastName" class="form-control" tooltip="{{ContactForm.LastName.$valid && ContactForm.submitted ? '' : 'Enter last name between 2-15 characters.'}}" tooltip-trigger="focus" 
-                                 tooltip-placement="bottom" required="" />
+                                <input type="text" class="form-control" name="LastName" placeholder="Last Name" ng-model="Contact.LastName" required="" />
+                                <span class="error" ng-show="ContactForm.submitted && ContactForm.LastName.$error.required">Last Name is required</span>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label">Mobile</label>
                             <div class="col-lg-3 col-md-3 col-sm-3" ng-class="{'has-error': ContactForm.Mobile.$invalid && ContactForm.submitted}">
-                                <input type="text" name="Mobile" data-mask="9999999999"  ng-model="contact.Mobile" placeholder="" class="form-control" tooltip="{{ContactForm.Mobile.$valid && ContactForm.submitted ? '' : 'Enter 10 digit mobile number.'}}" tooltip-trigger="focus" 
-                                 tooltip-placement="bottom" required="" />
+                                <input type="text" name="Mobile" data-mask="9999999999" ng-model="Contact.Mobile" placeholder="" class="form-control" required="" />
+                                <span class="error" ng-show="ContactForm.submitted && ContactForm.Mobile.$error.required">Mobile No. is required</span>
                             </div>
                         </div>
 
@@ -33,23 +33,24 @@
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label">Gender</label>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="radio radio-success radio-inline">
-                                    <input type="radio" id="inlineRadio1" ng-model="contact.Gender" value="Male" name="radioInline" ng-checked="true">
+                                    <input type="radio" id="inlineRadio1" ng-model="Contact.Gender" value="Male" name="radioInline" ng-checked="true">
                                     <label for="inlineRadio1" class="font-noraml" style="line-height: 1.2;">Male</label>
                                 </div>
                                 <div class="radio radio-success radio-inline">
-                                    <input type="radio" id="inlineRadio2"  ng-model="contact.Gender" value="Female" name="radioInline">
+                                    <input type="radio" id="inlineRadio2" ng-model="Contact.Gender" value="Female" name="radioInline">
                                     <label for="inlineRadio2" class="font-noraml" style="line-height: 1.2;">Female</label>
                                 </div>
-                             </div>
+                            </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label">Birth Date</label>
                             <div class="col-lg-3 col-md-3 col-sm-3">
                                 <div class="input-group date">
-                                    <input type="datetime" class="form-control" calendar ng-model="contact.BirthDate" view="date" auto-close="true">
+                                    <input type="datetime" class="form-control" pastdatesonly ng-model="Contact.BirthDate" view="date" auto-close="true">
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 </div>
+
                             </div>
                         </div>
 
@@ -57,7 +58,7 @@
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label">Anniversary</label>
                             <div class="col-lg-3 col-md-3 col-sm-3">
                                 <div class="input-group date">
-                                    <input type="datetime" class="form-control" calendar ng-model="contact.Anniversary" view="date" auto-close="true">
+                                    <input type="datetime" class="form-control" pastdatesonly ng-model="Contact.Anniversary" view="date" auto-close="true">
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 </div>
                             </div>
@@ -66,13 +67,13 @@
                         <div class="form-group">
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label">Email</label>
                             <div class="col-lg-6 col-md-6 col-sm-6" ng-class="{'has-error': ContactForm.Email.$error.email && ContactForm.submitted}">
-                                <input type="email" name="Email" placeholder="" ng-model="contact.Email" class="form-control" tooltip="{{ContactForm.Email.$error.email && ContactForm.submitted ? '' : 'Please enter valid email.'}}" tooltip-trigger="focus" 
-                                 tooltip-placement="bottom"/>
+                                <input type="email" name="Email" placeholder="" ng-model="Contact.Email" class="form-control" />
+                                <span class="error" ng-show="ContactForm.submitted && ContactForm.Email.$error.email">Invalid e-mail</span>
                             </div>
                         </div>
 
                         <div class="form-group">
-                             <div class="col-sm-4 col-md-5 col-lg-5 col-sm-offset-3">
+                            <div class="col-sm-4 col-md-5 col-lg-5 col-sm-offset-3">
                                 <a ui-sref="app.contacts" class="btn btn-white" type="submit">Cancel</a>
                                 <button class="btn btn-primary" type="submit" ng-click="ContactForm.submitted=true;">Save</button>
                             </div>
@@ -85,25 +86,15 @@
                         </div>
                         <div class="form-group">
                             <label class="col-lg-2 col-md-2 control-label"></label>
-
-                            <div class="checkbox checkbox-success checkbox-inline col-lg-2 col-md-2">
-                                <input type="checkbox" id="Checkbox1" value="option1">
-                                <label for="inlineCheckbox1">Group1 </label>
-                            </div>
-                            <div class="checkbox checkbox-success checkbox-inline col-lg-2 col-md-2">
-                                <input type="checkbox" id="Checkbox2" value="option1">
-                                <label for="inlineCheckbox1"> Group2 </label>
-                            </div>
-                            <div class="checkbox checkbox-success checkbox-inline col-lg-2 col-md-2">
-                                <input type="checkbox" id="Checkbox3" value="option1">
-                                <label for="inlineCheckbox1"> Group3 </label>
-                            </div>
-                            <div class="checkbox checkbox-success checkbox-inline col-lg-2 col-md-2">
-                                <input type="checkbox" id="Checkbox4" value="option1">
-                                <label for="inlineCheckbox1">Group4 </label>
+                            <div ng-repeat="group in Groups">
+                                <div class="checkbox checkbox-success checkbox-inline col-lg-2 col-md-2">
+                                    <input type="checkbox" id="Checkbox1" value="option1">
+                                    <label for="inlineCheckbox1">{{group.Name}}</label>
+                                </div>
                             </div>
                         </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

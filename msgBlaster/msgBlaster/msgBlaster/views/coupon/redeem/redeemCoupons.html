@@ -1,4 +1,4 @@
-﻿<div ng-controller="CouponRedeemptionController as coupon">
+﻿<div ng-controller="CouponRedeemptionController">
 <div class="row wrapper border-bottom white-bg page-heading" style="padding-bottom: 0;">
     <div class="col-lg-10">
         <h2 style="margin-top: 10px;">Redeem Coupons</h2>
@@ -55,7 +55,7 @@
                             <div class="col-lg-2 col-md-3 col-xs-3 col-sm-3 line-height-2"><input type="text" placeholder="" class="form-control"></div>
                             <label class="col-lg-3 col-md-3 col-xs-3 col-sm-3 control-label">Bill Date</label>
                             <div class="col-lg-2 col-md-3 col-xs-3 col-sm-3 line-height-2"><div class="input-group date">
-                                <input type="datetime" class="form-control" calendar ng-model="coupon.BillDate" view="date" auto-close="true">
+                                <input type="datetime" class="form-control" calendar ng-model="BillDate" view="date" auto-close="true">
                                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                             </div></div>                                 
                         </div>

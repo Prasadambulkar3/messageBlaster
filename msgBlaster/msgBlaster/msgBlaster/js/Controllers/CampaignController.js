@@ -1,11 +1,11 @@
 ﻿
-App.controller('CampaignController', function () {
+App.controller('CampaignController', function ($scope) {
 
     //alert("ContactController");
 
 });
 
-App.controller('CampaignListController', function () {
+App.controller('CampaignListController', function ($scope) {
 
     var newColumns = [
                          { field: "Name", headerText: "Name", textAlign: ej.TextAlign.Right },
@@ -16,18 +16,18 @@ App.controller('CampaignListController', function () {
                          { headerText: "Resend", textAlign: ej.TextAlign.Center, template: "<a href=&#8217;#’><i class='fa fa-share-square-o fa-fw'></i></a>" }
     ];
 
-    this.columns = newColumns;
+    $scope.columns = newColumns;
 
-    this.data = ej.DataManager({ url: "http://192.168.1.52/msgblasterApi/api/Campaign/GetCampaignListByClientId?clientid=1", adaptor: "WebApiAdaptor", offline: true });
+    $scope.data = ej.DataManager({ url: "http://192.168.1.52/msgblasterApi/api/Campaign/GetCampaignListByClientId?clientid=1", adaptor: "WebApiAdaptor", offline: true });
 
-    this.query = new ej.Query().addParams('selecedYear', '2014').addParams('accessId', '1');
+    $scope.query = new ej.Query().addParams('selecedYear', '2014').addParams('accessId', '1');
 
-    this.allowpaging = { allowPaging: true };
+    $scope.allowpaging = { allowPaging: true };
 
-    this.pagesettings = { pageSize: 13 };
+    $scope.pagesettings = { pageSize: 13 };
 
-    this.allowsorting = { allowSorting: true };
+    $scope.allowsorting = { allowSorting: true };
 
-    this.sortsettings = { sortedColumns: [{ field: "Id", direction: ej.sortOrder.Ascending }] }
+    $scope.sortsettings = { sortedColumns: [{ field: "Id", direction: ej.sortOrder.Ascending }] }
 
 });

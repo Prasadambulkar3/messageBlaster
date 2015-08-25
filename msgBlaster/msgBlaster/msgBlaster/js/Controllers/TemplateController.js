@@ -1,7 +1,7 @@
 ﻿
-App.controller('TemplateListController', function ($modal) {
+App.controller('TemplateListController', function ($scope, $modal) {
 
-    this.modal = function () {
+    $scope.modal = function () {
         $modal.open({
             controller: 'TemplateController as template',
             templateUrl: '../msgBlaster/views/template/create/createTemplate.html',
@@ -12,14 +12,14 @@ App.controller('TemplateListController', function ($modal) {
 });
 
 
-App.controller('TemplateController', function ($modal, $modalInstance) {
+App.controller('TemplateController', function ($scope, $modal, $modalInstance) {
 
-    this.save = function () {
+    $scope.save = function () {
         //CommonService.updateProfileData(data);
         $modalInstance.close();
     }
 
-    this.cancel = function () {
+    $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
     }
 

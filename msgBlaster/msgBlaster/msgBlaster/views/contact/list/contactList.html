@@ -1,4 +1,4 @@
-<div ng-controller="ContactListController as contact">
+<div ng-controller="ContactListController">
     <div class="row wrapper border-bottom white-bg page-heading" style="padding-bottom: 0;">
         <div class="col-lg-10">
             <h2 style="margin-top: 10px;">Contacts</h2>
@@ -27,7 +27,7 @@
                             <a ui-sref="app.createContact" class="col-lg-5 btn btn-primary btn-sm pull-right">Add</a>
                         </div>
                     </div>
-                    <div id="Grid" ej-grid e-datasource="contact.data" e-columns="contact.columns" e-toolbarsettings='contact.tools' e-toolbarclick="contact.toolbarHandler" e-editsettings="contact.edittsetings" e-allowsorting="contact.allowsorting" e-sortsettings="contact.sortsettings" e-actionbegin="contact.actionBegin" e-allowpaging="contact.allowpaging" e-pagesettings="contact.pagesettings" e-editsettings="contact.editsettings" e-allowreordering="contact.allowReordering" e-allowresizing="contact.allowResizing"></div>
+                    <div id="Grid" ej-grid e-datasource="data" e-columns="columns" e-toolbarsettings='tools' e-toolbarclick="toolbarHandler" e-editsettings="edittsetings" e-allowsorting="allowsorting" e-sortsettings="sortsettings" e-actionbegin="actionBegin" e-allowpaging="allowpaging" e-pagesettings="pagesettings" e-editsettings="editsettings" e-allowreordering="allowReordering" e-allowresizing="allowResizing"></div>
                 </div>
             </div>
         </div>
