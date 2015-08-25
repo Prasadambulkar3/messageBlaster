@@ -1,5 +1,5 @@
 ﻿
-App.controller('ImportContactsController', function ($scope) {
+App.controller('ImportContactsController', function () {
 
 
 });

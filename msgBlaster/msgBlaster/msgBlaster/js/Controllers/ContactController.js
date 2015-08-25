@@ -97,7 +97,6 @@ App.controller('ContactController', function ($scope, $routeParams, $rootScope, 
 });
 
 App.controller('ContactListController', function ($scope) {
-
     var newColumns = [
                           { field: "Name", headerText: "Name", width: 75, textAlign: ej.TextAlign.Right },
                           { field: "MobileNumber", headerText: "Number", width: 75, textAlign: ej.TextAlign.Right },
