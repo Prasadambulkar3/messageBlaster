@@ -1,11 +1,99 @@
 ﻿
-App.controller('ContactController', function ($scope, GroupService) {
+App.controller('ContactController', function ($scope, $routeParams, $rootScope, $state, $filter, ContactService, GroupService) {
 
+    $scope.ExistingContact = "false";
+    $scope.InValidAnniversary = false;
+    $scope.groupList = [];
+    $scope.mode;
+
+    $scope.Contact = {
+        "Id": "",
+        "ClientId": 1,
+        "GroupId": "",  //$scope.Groups[0].Id
+        "FirstName": "",
+        "LastName": "",
+        "MobileNumber": "",
+        "Gender": "Male",
+        "BirthDate": "",
+        "AnniversaryDate": ""
+    };
+
+    //Create Contact
+    $scope.save = function (Contact, valid, InValidAnniversary) {
+
+        if (valid && ($scope.ExistingContact == "false") && (InValidAnniversary == false)) {
+
+            Contact.BirthDate = $filter('date')(Contact.BirthDate, "dd-MMM-yyyy");
+            Contact.AnniversaryDate = $filter('date')(Contact.AnniversaryDate, "dd-MMM-yyyy");
+            Contact.Groups = $scope.groupList;
+            var contact = ContactService.createContact(Contact);
+            contact.then(function (data) {
+                $scope.isSave = false;
+                toastr.success('Contact created successfully!');
+                $state.go('app.contacts');
+            }, function (error) {
+                toastr.warning('There is an error while creating contact');
+            });
+        }
+    }
+
+    //validate Anniversary
+    $scope.validateAnniversary = function (birthDate, anniversaryDate) {
+
+        birthDate = moment(birthDate).format("YYYY-MM-DDTHH:mm:ssZ");
+        anniversaryDate = moment(anniversaryDate).format("YYYY-MM-DDTHH:mm:ssZ");
+        var birthDateTemp = moment(birthDate);
+        var anniversaryDateTemp = moment(anniversaryDate);
+        var days = moment.duration(anniversaryDateTemp.diff(birthDateTemp)).asDays();
+        if (anniversaryDate != "" && anniversaryDate != null) {
+
+            if (days < 0) {
+                $scope.InValidAnniversary = true;
+            } else {
+                $scope.InValidAnniversary = false;
+            }
+        }
+    }
+
+    //Load groupList 
     var groups = GroupService.getGroupList(1);
+    groups.then(function (data) {
+        $scope.Groups = data;
+    });
 
-    groups.then(function (data) {     
-        $scope.Groups = data;        
-    });  
+    //Check single group
+    $scope.selectGroups = function (group, index) {
+        if (group.IsChecked) {
+            $scope.someSelected = true;
+            $scope.groupList.push(group);          
+        }
+        else {
+            for (var i = 0; i < $scope.groupList.length; i++) {
+
+                if ($scope.groupList[i].Id == group.Id) {
+                    $scope.groupList.splice(i, 1);
+                    alert(JSON.stringify($scope.groupList));
+                }
+            }
+            if ($scope.groupList.length == 0) {
+                $scope.someSelected = false;
+            }
+        }
+    }
+
+    //Check all groups
+    $scope.selectAll = function (group, index) {
+
+        if (group.IsAllChecked) {
+            $scope.allSelected = true;
+            $scope.groupList = $scope.Groups;
+        } else {
+            $scope.allSelected = false;
+            $scope.groupList = [];
+        }
+    }
+
+
 });
 
 App.controller('ContactListController', function ($scope) {
@@ -22,7 +110,7 @@ App.controller('ContactListController', function ($scope) {
 
     $scope.tools = { showToolbar: false, toolbarItems: [ej.Grid.ToolBarItems.Add, ej.Grid.ToolBarItems.Edit, ej.Grid.ToolBarItems.Delete, ej.Grid.ToolBarItems.ExcelExport, ej.Grid.ToolBarItems.WordExport, ej.Grid.ToolBarItems.PdfExport, ej.Grid.ToolBarItems.PrintGrid] };
 
-    $scope.data = ej.DataManager({ url: "http://192.168.1.52/msgblasterApi/api/Contact/GetContactsbyClientId?clientId=1", adaptor: "WebApiAdaptor", offline: true });
+    //  $scope.data = ej.DataManager({ url: "http://localhost:63138//api/Contact/GetContactsbyClientId?clientId=1", adaptor: "WebApiAdaptor", offline: true });
 
     $scope.allowpaging = { allowPaging: true };
 

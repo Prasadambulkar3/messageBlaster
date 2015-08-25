@@ -8983,6 +8983,13 @@ body.skin-3 {
     color: #ed5565;
 }
 
+.hideOverflow {
+    overflow: hidden;
+    white-space: nowrap;
+    /*text-overflow: ellipsis;*/
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
 
 /*input:required {
 	border: 1px solid blue;
